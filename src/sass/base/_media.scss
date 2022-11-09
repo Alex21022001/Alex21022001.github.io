@@ -1,0 +1,96 @@
+@media (max-width: 1200px) {
+    .promo {
+        background-position-x: 32%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .promo {
+        padding-top: 25px;
+
+        &__text {
+
+            &-title {
+                font-size: 33px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .container {
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+    .promo {
+        background: url("../img/mainBg-s.png") 50%/cover no-repeat;
+        min-height: 100vh;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 0px;
+
+
+        &__text{
+            margin-top: 35px;
+            &-title{
+                display: block;
+                width: 250px;
+                font-size: 20px;
+                line-height: 25px;
+            }
+            &-subtitle{
+                width: 280px;
+                margin-top: 25px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 18px;
+            }
+            &-description{
+                margin: 0 auto;
+                margin-top: 10px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+        &__btn{
+            margin: 0 auto;
+            margin-top: 225px;
+            width: 83vw;
+            height: 42px;
+            padding: 10px;
+
+            font-size: 15px;
+            line-height: 18px;
+
+            &:hover{
+                background: #6F39A4;
+                border: 2px solid #6F39A4;
+            }
+        }
+
+        &__hamburger{
+            right: 8px;
+        }
+        .hamburger-box{
+            width: 20px;
+        }
+         .hamburger-inner{
+            width: 25px;
+             border-radius: 0;
+             height: 2px;
+             &:before{
+                 width: 25px;
+                 border-radius: 0;
+                 height: 2px;
+             }
+             &:after{
+                 border-radius: 0;
+                 width: 25px;
+                 height: 2px;
+             }
+        }
+    }
+}
