@@ -13,6 +13,7 @@
 
             &-title {
                 font-size: 33px;
+                line-height: 34px;
             }
         }
     }
@@ -25,77 +26,163 @@
         padding-left: calc(var(--bs-gutter-x) * .5);
     }
     .promo {
-        background: url("../img/mainBg-s.png") 50%/cover no-repeat;
+        background: url("../img/main_bg-575.png") 50%/cover no-repeat;
+        background-position-y: 30%;
         min-height: 100vh;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 0px;
 
-        &__wrapper{
-            position: relative;
-            height: calc(100vh - 70px);
+        &__logo {
+            margin-top: 20px;
         }
 
-        &__text{
-            margin-top: 35px;
-            &-title{
+        &__wrapper {
+            position: relative;
+            //height: calc(100vh (- 70px);
+        }
+
+        &__text {
+            margin-top: 80px;
+
+            &-title {
                 display: block;
-                width: 250px;
-                font-size: 20px;
-                line-height: 25px;
+                font-size: 32px;
+                line-height: 34px;
+                width: 83vw;
             }
-            &-subtitle{
-                width: 280px;
-                margin-top: 25px;
-                font-weight: 500;
+
+            &-subtitle {
+                width: 340px;
+                margin-top: 65px;
+                font-size: 28px;
+                line-height: 30px;
+            }
+
+            &-description {
+                margin-top: 20px;
                 font-size: 16px;
-                line-height: 18px;
-            }
-            &-description{
-                margin: 0 auto;
-                margin-top: 10px;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 16px;
+                line-height: 20px;
             }
         }
-        &__btn{
+
+        &__btn {
             position: absolute;
             bottom: 60px;
-            width: 256px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 350px;
             height: 42px;
             padding: 10px;
 
             font-size: 15px;
             line-height: 18px;
 
-            &:hover{
-                background: #6F39A4;
-                border: 2px solid #6F39A4;
+            &:hover {
+                //background: #6F39A4;
+                //border: 2px solid #6F39A4;
+                border: none;
             }
         }
-
-        &__hamburger{
-            right: 8px;
-        }
-        .hamburger-box{
-            width: 20px;
-        }
-         .hamburger-inner{
-            width: 25px;
-             border-radius: 0;
-             height: 2px;
-             &:before{
-                 width: 25px;
-                 border-radius: 0;
-                 height: 2px;
-             }
-             &:after{
-                 border-radius: 0;
-                 width: 25px;
-                 height: 2px;
-             }
-        }
+    }
+    .hamburger {
+        top: 30px;
     }
 }
 
+@media (max-width: 424px) {
+
+    .promo {
+        background: url("../img/main_bg-425.png") 50%/cover no-repeat;
+        background-position-y: 30%;
+
+
+        &__text {
+            margin-top: 50px;
+
+            &-title {
+                font-size: 28px;
+                line-height: 30px;
+            }
+
+            &-subtitle {
+                width: 280px;
+                margin-top: 60px;
+                font-size: 22px;
+                line-height: 24px;
+            }
+
+            &-description {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        &__btn {
+            width: 320px;
+        }
+    }
+
+}
+
+@media (max-width: 350px) {
+    .promo {
+
+        &__logo {
+            margin-top: 0;
+        }
+
+        &__text {
+            margin-top: 35px;
+
+            &-title {
+                font-size: 22px;
+                line-height: 25px;
+            }
+
+            &-subtitle {
+                width: 260px;
+                font-size: 16px;
+                line-height: 18px;
+                margin-top: 26px;
+            }
+
+            &-description {
+                font-size: 11px;
+                line-height: 16px;
+                margin-top: 10px;
+            }
+        }
+
+        &__btn {
+            width: 280px;
+        }
+
+    }
+
+    .hamburger {
+        right: 10px;
+        top: 11px;
+    }
+    .hamburger-box {
+        width: 20px;
+    }
+    .hamburger-inner {
+        width: 25px;
+        border-radius: 0;
+        height: 2px;
+
+        &:before {
+            width: 25px;
+            border-radius: 0;
+            height: 2px;
+        }
+
+        &:after {
+            border-radius: 0;
+            width: 25px;
+            height: 2px;
+        }
+    }
+
+}
