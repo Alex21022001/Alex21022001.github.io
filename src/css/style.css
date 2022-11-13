@@ -14,6 +14,9 @@
   padding: 45px 0 110px 0;
   position: relative;
 }
+.promo .row {
+  position: relative;
+}
 .promo__menu {
   align-self: center;
 }
@@ -88,21 +91,6 @@
   border: none;
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
-.promo__hamburger {
-  position: absolute;
-  right: 20px;
-  top: 11px;
-}
-
-.hamburger-inner {
-  background: #FFFFFF;
-}
-.hamburger-inner:before {
-  background: #FFFFFF;
-}
-.hamburger-inner:after {
-  background: #FFFFFF;
-}
 
 .en {
   font-weight: 400;
@@ -120,6 +108,39 @@
 .language_active {
   color: #2CBF96;
   cursor: default;
+}
+
+.hamburger {
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 40px;
+  height: 24px;
+  padding: 0;
+}
+.hamburger__box {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: #FFFFFF;
+}
+.hamburger__box:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+}
+.hamburger__box:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
 }
 
 .promo__mobile-menu_block {
@@ -204,6 +225,9 @@
   .promo {
     background-position-x: 32%;
   }
+  .hamburger {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .promo {
@@ -212,6 +236,9 @@
   .promo__text-title {
     font-size: 33px;
     line-height: 34px;
+  }
+  .hamburger {
+    display: block;
   }
 }
 @media (max-width: 576px) {
@@ -226,9 +253,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;
-  }
-  .promo__logo {
-    margin-top: 20px;
+    padding-top: 35px;
   }
   .promo__wrapper {
     position: relative;
@@ -267,9 +292,6 @@
   .promo__btn:hover {
     border: none;
   }
-  .hamburger {
-    top: 30px;
-  }
 }
 @media (max-width: 424px) {
   .promo {
@@ -298,9 +320,6 @@
   }
 }
 @media (max-width: 350px) {
-  .promo__logo {
-    margin-top: 0;
-  }
   .promo__text {
     margin-top: 35px;
   }
@@ -323,26 +342,11 @@
     width: 280px;
   }
   .hamburger {
-    right: 10px;
-    top: 11px;
-  }
-  .hamburger-box {
-    width: 20px;
-  }
-  .hamburger-inner {
     width: 25px;
-    border-radius: 0;
-    height: 2px;
   }
-  .hamburger-inner:before {
+  .hamburger__box {
     width: 25px;
-    border-radius: 0;
-    height: 2px;
-  }
-  .hamburger-inner:after {
-    border-radius: 0;
-    width: 25px;
-    height: 2px;
+    height: 3px;
   }
 }
 
