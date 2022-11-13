@@ -36,6 +36,25 @@ const allLangs = {
     "menu__contacts": {
         "ua": "Контакти",
         "en": "Contacts"
+    },"mb_menu__about": {
+        "ua": "Про Нас",
+        "en": "About Us"
     },
+    "mb_menu__projects": {
+        "ua": "Проєкти",
+        "en": "Projects"
+    },
+    "mb_menu__team": {
+        "ua": "Команда",
+        "en": "Team"
+    },
+    "mb_menu__partners": {
+        "ua": "Наші Партнери",
+        "en": "Our Partners"
+    },
+    "mb_menu__contacts": {
+        "ua": "Контакти",
+        "en": "Contacts"
+    }
 
 }
