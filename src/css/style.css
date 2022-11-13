@@ -37,10 +37,6 @@
 .promo__menu-item a:hover {
   text-decoration: underline;
 }
-.promo__menu-item_languages {
-  display: flex;
-  gap: 10px;
-}
 .promo__text {
   margin-top: 110px;
 }
@@ -111,6 +107,7 @@
 }
 
 .hamburger {
+  display: none;
   right: 0;
   top: 0;
   position: absolute;
@@ -141,6 +138,14 @@
   width: 100%;
   height: 100%;
   background: #FFFFFF;
+}
+.hamburger_hidden {
+  visibility: hidden;
+}
+
+.languages {
+  display: flex;
+  gap: 10px;
 }
 
 .promo__mobile-menu_block {
@@ -206,6 +211,9 @@
   background: #2CBF96;
   box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25);
 }
+.promo__mobile-menu_item:active:before {
+  background: #FFFFFF;
+}
 
 .overlay {
   transition: 0.7s all;
@@ -225,11 +233,8 @@
   .promo {
     background-position-x: 32%;
   }
-  .hamburger {
-    display: none;
-  }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .promo {
     padding-top: 25px;
   }
@@ -253,7 +258,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;
-    padding-top: 35px;
+    padding-top: 45px;
   }
   .promo__wrapper {
     position: relative;
@@ -297,6 +302,7 @@
   .promo {
     background: url("../img/main_bg-425.png") 50%/cover no-repeat;
     background-position-y: 30%;
+    padding-top: 35px;
   }
   .promo__text {
     margin-top: 50px;
@@ -320,6 +326,9 @@
   }
 }
 @media (max-width: 350px) {
+  .promo {
+    padding-top: 25px;
+  }
   .promo__text {
     margin-top: 35px;
   }

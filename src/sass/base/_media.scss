@@ -2,13 +2,11 @@
     .promo {
         background-position-x: 32%;
     }
-    .hamburger{
-        display: none;
-    }
+
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .promo {
         padding-top: 25px;
 
@@ -38,7 +36,7 @@
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 0px;
-        padding-top: 35px;
+        padding-top: 45px;
 
         &__wrapper {
             position: relative;
@@ -95,6 +93,7 @@
     .promo {
         background: url("../img/main_bg-425.png") 50%/cover no-repeat;
         background-position-y: 30%;
+        padding-top: 35px;
 
 
         &__text {
@@ -127,7 +126,7 @@
 
 @media (max-width: 350px) {
     .promo {
-
+        padding-top: 25px;
 
         &__text {
             margin-top: 35px;

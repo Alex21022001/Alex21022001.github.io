@@ -32,11 +32,6 @@
                     text-decoration: underline;
                 }
             }
-
-            &_languages {
-                display: flex;
-                gap: 10px;
-            }
         }
     }
 
@@ -100,22 +95,8 @@
         }
     }
 
-    //&__hamburger{
-    //    position: absolute;
-    //    right: 20px;
-    //    top: 11px;
-    //}
 }
 
-//.hamburger-inner{
-//    background: $white-color;
-//    &:before{
-//        background: $white-color;
-//    }
-//    &:after{
-//        background: $white-color;
-//    }
-//}
 
 
 .en {
@@ -138,6 +119,7 @@
 }
 
 .hamburger {
+    display: none;
     right: 0;
     top: 0;
     position: absolute;
@@ -172,4 +154,14 @@
             background: $white-color;
         }
     }
+
+    &_hidden{
+       visibility: hidden;
+    }
+}
+.languages{
+    display: flex;
+    gap: 10px;
+
+
 }
