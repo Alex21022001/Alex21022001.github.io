@@ -229,10 +229,13 @@
 }
 
 .aboutUs {
+  position: relative;
   min-height: 525px;
   background-color: #1E1E1E;
 }
 .aboutUs__content-wrapper {
+  z-index: 20;
+  background-color: rgba(30, 30, 30, 0.1);
   padding: 125px 0 130px;
 }
 .aboutUs__title {
@@ -261,6 +264,15 @@
   text-decoration-line: underline;
   color: #EEF3F3;
   margin-top: 25px;
+}
+.aboutUs__animation {
+  height: 100%;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 1200px) {

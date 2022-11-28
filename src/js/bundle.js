@@ -32,6 +32,69 @@ const adaptation = () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/animation.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/animation.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const animation = (font, background, color) => {
+    const canvas = document.querySelector("#canvas"),
+        box = document.querySelector(".aboutUs");
+
+    let ctx = canvas.getContext("2d"),
+        width = (canvas.width = box.clientWidth),
+        height = (canvas.height = box.clientHeight),
+        str = "UTTT ".split(""),
+        col = width*0.5/font,
+        // col = width/font,
+        arr = [];
+
+    for (let i = 0; i < col; i++) {
+        arr[i] = 1
+    }
+
+    function getRandomText(){
+        let txt = str[Math.floor(Math.random() * str.length)];
+        let random =Math.floor(Math.random() * 2);
+        if (txt === "U"){
+            ctx.fillStyle = "#075B99";
+        }else if (txt === "T" && random === 1){
+            ctx.fillStyle = "#6F39A4";
+        }
+
+        return txt;
+    }
+
+    const draw = () => {
+        ctx.fillStyle = background;
+        ctx.fillRect(0, 0, width, height);
+        ctx.font = `${font}px`;
+
+        for (let i = 0; i < arr.length; i++) {
+            ctx.fillStyle = color;
+            let txt = getRandomText();
+
+            ctx.fillText(txt, i * font, arr[i] * font);
+
+            if (arr[i] * font > height && Math.random() > 0.885) {
+                arr[i] = 0;
+            }
+            arr[i]++
+        }
+    }
+    const id = setInterval(draw, 50);
+    window.addEventListener("resize", () => location.reload())
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (animation);
+
+/***/ }),
+
 /***/ "./src/js/modules/hamburger.js":
 /*!*************************************!*\
   !*** ./src/js/modules/hamburger.js ***!
@@ -231,6 +294,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
 /* harmony import */ var _modules_adaptation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/adaptation */ "./src/js/modules/adaptation.js");
 /* harmony import */ var _modules_languages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/languages */ "./src/js/modules/languages.js");
+/* harmony import */ var _modules_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/animation */ "./src/js/modules/animation.js");
+
 
 
 
@@ -240,6 +305,8 @@ window.addEventListener("DOMContentLoaded",()=>{
     (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
     (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96");
+
 });
 })();
 
