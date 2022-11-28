@@ -226,6 +226,36 @@ const languages = () => {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (languages);
 
+/***/ }),
+
+/***/ "./src/js/modules/moreInform.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/moreInform.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _animation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation */ "./src/js/modules/animation.js");
+
+
+const moreInform = (animation,id)=>{
+    const btn = document.querySelector(".aboutUs__more-information"),
+        parent = document.querySelector(".aboutUs__description"),
+        content = parent.querySelector(".aboutUs__description_additional"),
+        canvas = document.querySelector("#canvas");
+
+    btn.addEventListener("click",()=>{
+        content.classList.add("aboutUs__description_additional-active");
+
+        animation(11,"rgba(30, 30, 30, .1)","#2CBF96",id);
+    })
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (moreInform);
+
 /***/ })
 
 /******/ 	});
@@ -295,6 +325,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_adaptation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/adaptation */ "./src/js/modules/adaptation.js");
 /* harmony import */ var _modules_languages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/languages */ "./src/js/modules/languages.js");
 /* harmony import */ var _modules_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/animation */ "./src/js/modules/animation.js");
+/* harmony import */ var _modules_moreInform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/moreInform */ "./src/js/modules/moreInform.js");
+
 
 
 
@@ -306,7 +338,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
     (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96");
-
+    (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])(_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"]);
 });
 })();
 

@@ -238,6 +238,9 @@
   background-color: rgba(30, 30, 30, 0.1);
   padding: 125px 0 130px;
 }
+.aboutUs__animation-wrapper {
+  background-color: rgb(30, 30, 30);
+}
 .aboutUs__title {
   font-weight: 700;
   font-size: 30px;
@@ -246,6 +249,7 @@
   color: #EEF3F3;
 }
 .aboutUs__description {
+  transition: 2s all;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -255,6 +259,12 @@
 .aboutUs__description span:nth-child(2) {
   display: block;
   margin-top: 25px;
+}
+.aboutUs__description_additional {
+  display: none;
+}
+.aboutUs__description_additional-active {
+  display: unset;
 }
 .aboutUs__more-information {
   cursor: pointer;

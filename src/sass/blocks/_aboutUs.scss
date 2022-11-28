@@ -19,6 +19,7 @@
         color: $white-color;
     }
     &__description{
+        transition: 2s all;
         font-weight: 400;
         font-size: 14px;
         line-height: 18px;
@@ -32,7 +33,7 @@
         }
         &_additional{
             display: none;
-            &_active{
+            &-active{
                 display: unset;
             }
         }
