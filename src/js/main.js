@@ -10,5 +10,5 @@ window.addEventListener("DOMContentLoaded",()=>{
     adaptation();
     languages();
     animation(11,"rgba(30, 30, 30, .1)","#2CBF96");
-    moreInform(animation);
+    moreInform();
 });

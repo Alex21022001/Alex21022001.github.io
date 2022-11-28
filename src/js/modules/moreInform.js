@@ -1,15 +1,17 @@
-import animation from "./animation";
 
-const moreInform = (animation,id)=>{
+
+const moreInform = () => {
     const btn = document.querySelector(".aboutUs__more-information"),
         parent = document.querySelector(".aboutUs__description"),
-        content = parent.querySelector(".aboutUs__description_additional"),
-        canvas = document.querySelector("#canvas");
+        content = parent.querySelector(".aboutUs__description_additional");
 
-    btn.addEventListener("click",()=>{
+    btn.addEventListener("click", () => {
+        btn.remove();
+
+        content.style.display = "unset";
         content.classList.add("aboutUs__description_additional-active");
 
-        animation(11,"rgba(30, 30, 30, .1)","#2CBF96",id);
+
     })
 }
 

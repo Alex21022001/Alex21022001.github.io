@@ -1,13 +1,17 @@
 const animation = (font, background, color) => {
     const canvas = document.querySelector("#canvas"),
-        box = document.querySelector(".aboutUs");
+        box = document.querySelector(".aboutUs"),
+        h = box.offsetHeight,
+        moreInform = document.querySelector(".aboutUs__description_additional");
+
+    // moreInform.style.display = "none";
+    moreInform.style.height = "1px";
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),
-        height = (canvas.height = box.clientHeight),
+        height = (canvas.height = h),
         str = "UTTT ".split(""),
         col = width*0.5/font,
-        // col = width/font,
         arr = [];
 
     for (let i = 0; i < col; i++) {

@@ -2,11 +2,11 @@
     position: relative;
     min-height: 525px;
     background-color: $dark-color;
-
+    overflow: hidden;
+    padding: 125px 0 130px;
     &__content-wrapper{
         z-index: 20;
         background-color: rgba(30, 30, 30, .1);
-        padding: 125px 0 130px;
     }
     &__animation-wrapper{
         background-color: rgba(30, 30, 30, 1);
@@ -24,7 +24,7 @@
         font-size: 14px;
         line-height: 18px;
         color: $white-color;
-        margin-top: 60px;
+        margin-top: 45px;
         span{
            &:nth-child(2){
                display: block;
@@ -32,9 +32,10 @@
            }
         }
         &_additional{
-            display: none;
+            transition: 2s all;
+            visibility: hidden;
             &-active{
-                display: unset;
+                visibility: visible;
             }
         }
     }

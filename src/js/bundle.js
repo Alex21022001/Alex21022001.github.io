@@ -44,14 +44,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const animation = (font, background, color) => {
     const canvas = document.querySelector("#canvas"),
-        box = document.querySelector(".aboutUs");
+        box = document.querySelector(".aboutUs"),
+        h = box.offsetHeight,
+        moreInform = document.querySelector(".aboutUs__description_additional");
+
+    // moreInform.style.display = "none";
+    moreInform.style.height = "1px";
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),
-        height = (canvas.height = box.clientHeight),
+        height = (canvas.height = h),
         str = "UTTT ".split(""),
         col = width*0.5/font,
-        // col = width/font,
         arr = [];
 
     for (let i = 0; i < col; i++) {
@@ -238,19 +242,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _animation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation */ "./src/js/modules/animation.js");
 
 
-const moreInform = (animation,id)=>{
+const moreInform = () => {
     const btn = document.querySelector(".aboutUs__more-information"),
         parent = document.querySelector(".aboutUs__description"),
-        content = parent.querySelector(".aboutUs__description_additional"),
-        canvas = document.querySelector("#canvas");
+        content = parent.querySelector(".aboutUs__description_additional");
 
-    btn.addEventListener("click",()=>{
+    btn.addEventListener("click", () => {
+        btn.remove();
+
+        content.style.display = "unset";
         content.classList.add("aboutUs__description_additional-active");
 
-        animation(11,"rgba(30, 30, 30, .1)","#2CBF96",id);
+
     })
 }
 
@@ -338,7 +343,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
     (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96");
-    (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])(_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"]);
+    (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 })();
 
