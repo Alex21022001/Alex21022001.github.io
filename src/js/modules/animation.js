@@ -4,8 +4,8 @@ const animation = (font, background, color) => {
         h = box.offsetHeight,
         moreInform = document.querySelector(".aboutUs__description_additional");
 
-    // moreInform.style.display = "none";
-    moreInform.style.height = "1px";
+    moreInform.style.display = "none";
+
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),

@@ -51,6 +51,11 @@
     &__animation{
         height: 100%;
     }
+    &__arrow{
+        cursor: pointer;
+        margin-top: 25px;
+        width: 70px;
+    }
 }
 #canvas{
     position: absolute;
