@@ -1,10 +1,10 @@
-const animation = (font, background, color,speed) => {
+const animation = (font, background, color, speed) => {
     const canvas = document.querySelector("#canvas"),
         box = document.querySelector(".aboutUs"),
         h = box.offsetHeight,
-        moreInform = document.querySelector(".aboutUs__description_additional");
+        content = document.querySelector(".aboutUs__description_additional");
 
-    moreInform.classList.add("aboutUs__description_additional-inactive");
+    content.style.maxHeight = "0px";
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),

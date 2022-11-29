@@ -42,13 +42,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const animation = (font, background, color,speed) => {
+const animation = (font, background, color, speed) => {
     const canvas = document.querySelector("#canvas"),
         box = document.querySelector(".aboutUs"),
         h = box.offsetHeight,
-        moreInform = document.querySelector(".aboutUs__description_additional");
+        content = document.querySelector(".aboutUs__description_additional");
 
-    moreInform.classList.add("aboutUs__description_additional-inactive");
+    content.style.maxHeight = "0px";
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),
@@ -254,8 +254,7 @@ const moreInform = () => {
 
     btn.addEventListener("click", () => {
         btn.style.display = "none";
-        content.classList.remove("aboutUs__description_additional-inactive");
-        content.classList.add("aboutUs__description_additional-active");
+        content.style.maxHeight = content.scrollHeight + "px";
 
         arrow.classList.add("aboutUs__arrow");
         arrow.innerHTML = "<svg width=\"100%\" height=\"8\" viewBox=\"0 0 77 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
@@ -269,8 +268,7 @@ const moreInform = () => {
 
 
     arrow.addEventListener("click", function () {
-        content.classList.remove("aboutUs__description_additional-active");
-        content.classList.add("aboutUs__description_additional-inactive");
+        content.style.maxHeight = "0px";
         arrow.remove();
 
         setTimeout(() => {
@@ -377,7 +375,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
     (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
-    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96",0.885);
+    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96",0.935);
 });
 })();
 

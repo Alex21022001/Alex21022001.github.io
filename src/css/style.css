@@ -261,13 +261,9 @@
 .aboutUs__description_additional {
   transition: 1.5s all;
 }
-.aboutUs__description_additional-inactive {
-  height: 1px;
-}
-.aboutUs__description_additional-active {
-  height: 285px;
-}
 .aboutUs__more-information {
+  transition: opacity 0.5s;
+  opacity: 1;
   display: inline-block;
   cursor: pointer;
   font-weight: 400;
