@@ -42,7 +42,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const animation = (font, background, color) => {
+const animation = (font, background, color,speed) => {
     const canvas = document.querySelector("#canvas"),
         box = document.querySelector(".aboutUs"),
         h = box.offsetHeight,
@@ -84,7 +84,7 @@ const animation = (font, background, color) => {
 
             ctx.fillText(txt, i * font, arr[i] * font);
 
-            if (arr[i] * font > height && Math.random() > 0.885) {
+            if (arr[i] * font > height && Math.random() > speed) {
                 arr[i] = 0;
             }
             arr[i]++
@@ -246,6 +246,7 @@ const moreInform = () => {
         parent = document.querySelector(".aboutUs__description"),
         content = parent.querySelector(".aboutUs__description_additional"),
         arrow = document.createElement("div");
+    let arrowElement;
 
     btn.addEventListener("click", () => {
         btn.style.display = "none";
@@ -256,19 +257,36 @@ const moreInform = () => {
         arrow.innerHTML = "<svg width=\"100%\" height=\"8\" viewBox=\"0 0 77 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
             "<path d=\"M77 4L1 4\" stroke=\"#EEF3F3\"/>\n" +
             "<path d=\"M4 7L1 4L4 1\" stroke=\"#EEF3F3\"/>\n" +
-            "</svg>\n";
+            "</svg>";
         parent.insertAdjacentElement("beforeend", arrow);
+
+        arrowElement = arrow.querySelectorAll("path");
     });
+
 
     arrow.addEventListener("click", function () {
         content.classList.remove("aboutUs__description_additional-active");
         content.classList.add("aboutUs__description_additional-inactive");
         arrow.remove();
 
-        setTimeout(()=>{
+        setTimeout(() => {
             btn.style.display = "block";
-        },1400);
+        }, 1400);
     });
+
+    arrow.addEventListener("mouseover",()=>{
+       arrowElement.forEach(item=>{
+          item.setAttribute("stroke","#2CBF96");
+       });
+    });
+
+    arrow.addEventListener("mouseout",()=>{
+        arrowElement.forEach(item=>{
+            item.setAttribute("stroke","#EEF3F3");
+        });
+    });
+
+
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (moreInform);
@@ -354,8 +372,8 @@ window.addEventListener("DOMContentLoaded",()=>{
     (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
     (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
-    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96");
     (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96",0.885);
 });
 })();
 

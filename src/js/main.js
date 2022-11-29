@@ -9,6 +9,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     hamburger();
     adaptation();
     languages();
-    animation(11,"rgba(30, 30, 30, .1)","#2CBF96");
     moreInform();
+    animation(11,"rgba(30, 30, 30, .1)","#2CBF96",0.885);
 });

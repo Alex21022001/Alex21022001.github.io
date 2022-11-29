@@ -1,4 +1,4 @@
-const animation = (font, background, color) => {
+const animation = (font, background, color,speed) => {
     const canvas = document.querySelector("#canvas"),
         box = document.querySelector(".aboutUs"),
         h = box.offsetHeight,
@@ -40,7 +40,7 @@ const animation = (font, background, color) => {
 
             ctx.fillText(txt, i * font, arr[i] * font);
 
-            if (arr[i] * font > height && Math.random() > 0.885) {
+            if (arr[i] * font > height && Math.random() > speed) {
                 arr[i] = 0;
             }
             arr[i]++
