@@ -13,7 +13,7 @@
         font-weight: 700;
         font-size: 30px;
         line-height: 32px;
-        text-transform: capitalize;
+        //text-transform: capitalize;
         color: $white-color;
     }
     &__description{
@@ -35,7 +35,7 @@
                 height: 1px;
             }
             &-active{
-                height: 255px;
+                height: 285px;
             }
         }
     }
@@ -45,7 +45,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-        text-decoration-line: underline;
+        text-decoration: underline;
         color: $white-color;
         margin-top: 25px;
         &:hover{

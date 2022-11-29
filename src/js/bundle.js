@@ -271,7 +271,7 @@ const moreInform = () => {
 
         setTimeout(() => {
             btn.style.display = "block";
-        }, 1400);
+        }, 1200);
     });
 
     arrow.addEventListener("mouseover",()=>{
