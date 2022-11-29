@@ -238,9 +238,7 @@
 .aboutUs__content-wrapper {
   z-index: 20;
   background-color: rgba(30, 30, 30, 0.1);
-}
-.aboutUs__animation-wrapper {
-  background-color: rgb(30, 30, 30);
+  overflow: hidden;
 }
 .aboutUs__title {
   font-weight: 700;
@@ -262,11 +260,13 @@
   margin-top: 25px;
 }
 .aboutUs__description_additional {
-  transition: 2s all;
-  visibility: hidden;
+  transition: 1.5s all;
+}
+.aboutUs__description_additional-inactive {
+  height: 1px;
 }
 .aboutUs__description_additional-active {
-  visibility: visible;
+  height: 255px;
 }
 .aboutUs__more-information {
   cursor: pointer;

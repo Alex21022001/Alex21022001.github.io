@@ -4,26 +4,25 @@ const animation = (font, background, color) => {
         h = box.offsetHeight,
         moreInform = document.querySelector(".aboutUs__description_additional");
 
-    moreInform.style.display = "none";
-
+    moreInform.classList.add("aboutUs__description_additional-inactive");
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),
         height = (canvas.height = h),
         str = "UTTT ".split(""),
-        col = width*0.5/font,
+        col = width * 0.5 / font,
         arr = [];
 
     for (let i = 0; i < col; i++) {
         arr[i] = 1
     }
 
-    function getRandomText(){
+    function getRandomText() {
         let txt = str[Math.floor(Math.random() * str.length)];
-        let random =Math.floor(Math.random() * 2);
-        if (txt === "U"){
+        let random = Math.floor(Math.random() * 2);
+        if (txt === "U") {
             ctx.fillStyle = "#075B99";
-        }else if (txt === "T" && random === 1){
+        } else if (txt === "T" && random === 1) {
             ctx.fillStyle = "#6F39A4";
         }
 

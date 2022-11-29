@@ -48,26 +48,25 @@ const animation = (font, background, color) => {
         h = box.offsetHeight,
         moreInform = document.querySelector(".aboutUs__description_additional");
 
-    moreInform.style.display = "none";
-
+    moreInform.classList.add("aboutUs__description_additional-inactive");
 
     let ctx = canvas.getContext("2d"),
         width = (canvas.width = box.clientWidth),
         height = (canvas.height = h),
         str = "UTTT ".split(""),
-        col = width*0.5/font,
+        col = width * 0.5 / font,
         arr = [];
 
     for (let i = 0; i < col; i++) {
         arr[i] = 1
     }
 
-    function getRandomText(){
+    function getRandomText() {
         let txt = str[Math.floor(Math.random() * str.length)];
-        let random =Math.floor(Math.random() * 2);
-        if (txt === "U"){
+        let random = Math.floor(Math.random() * 2);
+        if (txt === "U") {
             ctx.fillStyle = "#075B99";
-        }else if (txt === "T" && random === 1){
+        } else if (txt === "T" && random === 1) {
             ctx.fillStyle = "#6F39A4";
         }
 
@@ -242,8 +241,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-
-
 const moreInform = () => {
     const btn = document.querySelector(".aboutUs__more-information"),
         parent = document.querySelector(".aboutUs__description"),
@@ -252,23 +249,25 @@ const moreInform = () => {
 
     btn.addEventListener("click", () => {
         btn.style.display = "none";
-
-        content.style.display = "block";
+        content.classList.remove("aboutUs__description_additional-inactive");
         content.classList.add("aboutUs__description_additional-active");
-
 
         arrow.classList.add("aboutUs__arrow");
         arrow.innerHTML = "<svg width=\"100%\" height=\"8\" viewBox=\"0 0 77 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
             "<path d=\"M77 4L1 4\" stroke=\"#EEF3F3\"/>\n" +
             "<path d=\"M4 7L1 4L4 1\" stroke=\"#EEF3F3\"/>\n" +
             "</svg>\n";
-        parent.insertAdjacentElement("beforeend",arrow);
+        parent.insertAdjacentElement("beforeend", arrow);
     });
 
-    arrow.addEventListener("click",function (){
-        btn.style.display = "block";
-        content.style.display = "none";
-        this.remove();
+    arrow.addEventListener("click", function () {
+        content.classList.remove("aboutUs__description_additional-active");
+        content.classList.add("aboutUs__description_additional-inactive");
+        arrow.remove();
+
+        setTimeout(()=>{
+            btn.style.display = "block";
+        },1400);
     });
 }
 
