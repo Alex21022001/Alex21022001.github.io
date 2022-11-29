@@ -113,8 +113,8 @@ const hamburger = () => {
         close = document.querySelector(".promo__mobile-menu_close"),
         menu = document.querySelector(".promo__mobile-menu_block"),
         overlay = document.querySelector(".overlay"),
-        languages = menu.querySelectorAll(".languages > div");
-
+        languages = menu.querySelectorAll(".languages > div"),
+        mobileMenuElements = document.querySelectorAll(".promo__mobile-menu_list a");
 
     function showMenu(){
         menu.style.display = "block";
@@ -149,6 +149,10 @@ const hamburger = () => {
 
     languages.forEach(lang=>{
        lang.addEventListener("click",hideMenu);
+    });
+
+    mobileMenuElements.forEach(item=>{
+        item.addEventListener("click",hideMenu);
     });
 
     hamburger.addEventListener("click", showMenu);
