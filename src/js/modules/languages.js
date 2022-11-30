@@ -44,7 +44,7 @@ const languages = () => {
             this.classList.add("language_active");
             lang = this.getAttribute("class").split(" ")[0];
             localStorage.setItem("lang",lang);
-            changeLanguage();
+            location.reload();
         });
     });
 

@@ -95,7 +95,11 @@ const animation = (font, background, color, speed) => {
         }
     }
     const id = setInterval(draw, 50);
-    window.addEventListener("resize", () => location.reload())
+    if (window.screen.availWidth < 768){
+
+    }else {
+        window.addEventListener("resize", () => location.reload());
+    }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (animation);
@@ -225,7 +229,7 @@ const languages = () => {
             this.classList.add("language_active");
             lang = this.getAttribute("class").split(" ")[0];
             localStorage.setItem("lang",lang);
-            changeLanguage();
+            location.reload();
         });
     });
 
