@@ -21,6 +21,20 @@
     .hamburger{
         display: block;
     }
+
+    .aboutUs{
+        padding: 0;
+        min-height: 400px;
+        &__content-wrapper{
+            padding: 100px 20px;
+            background-color: rgba(30, 30, 30, .9);
+        }
+        &__description{
+            &_additional{
+                overflow: hidden;
+            }
+        }
+    }
 }
 
 
@@ -84,6 +98,15 @@
                 //border: 2px solid #6F39A4;
                 border: none;
             }
+        }
+    }
+    .aboutUs {
+        padding: 0;
+        min-height: 400px;
+
+        &__content-wrapper {
+            padding: 100px 30px;
+            background-color: rgba(30, 30, 30, .9);
         }
     }
 }

@@ -39,7 +39,6 @@
     }
 
     &__more-information {
-        transition: opacity 0.5s;
         opacity: 1;
         display: inline-block;
         cursor: pointer;
@@ -49,6 +48,13 @@
         text-decoration: underline;
         color: $white-color;
         margin-top: 25px;
+        overflow: hidden;
+        transition: 0.4s;
+        height: 20px;
+        &_active{
+            margin-top: 0;
+            height: 0;
+        }
 
         &:hover {
             color: $green-color;

@@ -7,11 +7,15 @@ const animation = (font, background, color, speed) => {
     content.style.maxHeight = "0px";
 
     let ctx = canvas.getContext("2d"),
-        width = (canvas.width = box.clientWidth),
+        width = (canvas.width = box.clientWidth), //45 px = more info btn
         height = (canvas.height = h),
         str = "UTTT ".split(""),
         col = width * 0.5 / font,
         arr = [];
+
+    if (window.screen.availWidth <768){
+        col = width / font;
+    }
 
     for (let i = 0; i < col; i++) {
         arr[i] = 1

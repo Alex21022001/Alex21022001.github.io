@@ -51,11 +51,15 @@ const animation = (font, background, color, speed) => {
     content.style.maxHeight = "0px";
 
     let ctx = canvas.getContext("2d"),
-        width = (canvas.width = box.clientWidth),
+        width = (canvas.width = box.clientWidth), //45 px = more info btn
         height = (canvas.height = h),
         str = "UTTT ".split(""),
         col = width * 0.5 / font,
         arr = [];
+
+    if (window.screen.availWidth <768){
+        col = width / font;
+    }
 
     for (let i = 0; i < col; i++) {
         arr[i] = 1
@@ -249,12 +253,18 @@ const moreInform = () => {
     const btn = document.querySelector(".aboutUs__more-information"),
         parent = document.querySelector(".aboutUs__description"),
         content = parent.querySelector(".aboutUs__description_additional"),
-        arrow = document.createElement("div");
+        arrow = document.createElement("div"),
+        parentHeight = (parent.scrollHeight - content.scrollHeight) + "px";
     let arrowElement;
 
     btn.addEventListener("click", () => {
         btn.style.display = "none";
+        btn.classList.add("aboutUs__more-information_active");
         content.style.maxHeight = content.scrollHeight + "px";
+
+        if (window.screen.availWidth <768){
+            parent.style.minHeight = parentHeight;
+        }
 
         arrow.classList.add("aboutUs__arrow");
         arrow.innerHTML = "<svg width=\"100%\" height=\"8\" viewBox=\"0 0 77 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
@@ -272,19 +282,22 @@ const moreInform = () => {
         arrow.remove();
 
         setTimeout(() => {
-            btn.style.display = "block";
+            btn.style.display = "inline-block";
         }, 1200);
+        setTimeout(() => {
+            btn.classList.remove("aboutUs__more-information_active");
+        }, 1300);
     });
 
-    arrow.addEventListener("mouseover",()=>{
-       arrowElement.forEach(item=>{
-          item.setAttribute("stroke","#2CBF96");
-       });
+    arrow.addEventListener("mouseover", () => {
+        arrowElement.forEach(item => {
+            item.setAttribute("stroke", "#2CBF96");
+        });
     });
 
-    arrow.addEventListener("mouseout",()=>{
-        arrowElement.forEach(item=>{
-            item.setAttribute("stroke","#EEF3F3");
+    arrow.addEventListener("mouseout", () => {
+        arrowElement.forEach(item => {
+            item.setAttribute("stroke", "#EEF3F3");
         });
     });
 

@@ -262,7 +262,6 @@
   transition: 1.5s all;
 }
 .aboutUs__more-information {
-  transition: opacity 0.5s;
   opacity: 1;
   display: inline-block;
   cursor: pointer;
@@ -272,6 +271,13 @@
   text-decoration: underline;
   color: #EEF3F3;
   margin-top: 25px;
+  overflow: hidden;
+  transition: 0.4s;
+  height: 20px;
+}
+.aboutUs__more-information_active {
+  margin-top: 0;
+  height: 0;
 }
 .aboutUs__more-information:hover {
   color: #2CBF96;
@@ -310,6 +316,17 @@
   }
   .hamburger {
     display: block;
+  }
+  .aboutUs {
+    padding: 0;
+    min-height: 400px;
+  }
+  .aboutUs__content-wrapper {
+    padding: 100px 20px;
+    background-color: rgba(30, 30, 30, 0.9);
+  }
+  .aboutUs__description_additional {
+    overflow: hidden;
   }
 }
 @media (max-width: 576px) {
@@ -362,6 +379,14 @@
   }
   .promo__btn:hover {
     border: none;
+  }
+  .aboutUs {
+    padding: 0;
+    min-height: 400px;
+  }
+  .aboutUs__content-wrapper {
+    padding: 100px 30px;
+    background-color: rgba(30, 30, 30, 0.9);
   }
 }
 @media (max-width: 424px) {
