@@ -262,7 +262,7 @@ const moreInform = () => {
         btn.classList.add("aboutUs__more-information_active");
         content.style.maxHeight = content.scrollHeight + "px";
 
-        if (window.screen.availWidth <768){
+        if (window.screen.availWidth <768) {
             parent.style.minHeight = parentHeight;
         }
 
