@@ -51,7 +51,11 @@ const animation = (font, background, color, speed) => {
         }
     }
     const id = setInterval(draw, 50);
-    window.addEventListener("resize", () => location.reload())
+    if (window.screen.availWidth < 768){
+
+    }else {
+        window.addEventListener("resize", () => location.reload());
+    }
 }
 
 export default animation;
