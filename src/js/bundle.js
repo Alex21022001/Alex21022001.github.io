@@ -155,9 +155,9 @@ const hamburger = () => {
        }
     });
 
-    languages.forEach(lang=>{
-       lang.addEventListener("click",hideMenu);
-    });
+    // languages.forEach(lang=>{
+    //    lang.addEventListener("click",hideMenu);
+    // });
 
     mobileMenuElements.forEach(item=>{
         item.addEventListener("click",hideMenu);
