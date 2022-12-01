@@ -324,13 +324,16 @@
   }
   .hamburger {
     display: block;
+    right: 12px;
   }
   .aboutUs {
     padding: 0;
     min-height: 400px;
   }
   .aboutUs__content-wrapper {
-    padding: 100px 20px;
+    padding: 100px 0;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
     background-color: rgba(30, 30, 30, 0.9);
   }
   .aboutUs__description_additional {
@@ -389,11 +392,10 @@
     border: none;
   }
   .aboutUs {
-    padding: 0;
+    padding: 0 20px;
     min-height: 400px;
   }
   .aboutUs__content-wrapper {
-    padding: 100px 30px;
     background-color: rgba(30, 30, 30, 0.9);
   }
 }
