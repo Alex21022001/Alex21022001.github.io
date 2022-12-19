@@ -19,6 +19,9 @@
         .slider__next{
             right: 25px;
         }
+        .slider__item-btns{
+            position: unset;
+        }
     }
 
 }
@@ -68,12 +71,12 @@
             }
             &-text{
                 margin-top: 0;
-                height: 0;
+                max-height: 0;
                 overflow: hidden;
             }
             &-app{
                 margin-top: 0;
-                height: 0;
+                max-height: 0;
                 overflow: hidden;
             }
             &-more{
@@ -112,7 +115,7 @@
             }
             &-btns{
                 margin-top: 0;
-                height: 0;
+                max-height: 0;
                 overflow: hidden;
                 flex-direction: row;
                 a{

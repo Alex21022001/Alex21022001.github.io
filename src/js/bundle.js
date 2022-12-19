@@ -342,7 +342,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const sliderMore = ()=>{
+    const moreBtn = document.querySelector(".slider__item-more"),
+        text = document.querySelector(".slider__item-text"),
+        app = document.querySelector(".slider__item-app"),
+        btns= document.querySelector(".slider__item-btns");
 
+    moreBtn.addEventListener("click",(e)=>{
+        moreBtn.style.display = "none";
+
+    });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sliderMore);

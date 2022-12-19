@@ -65,7 +65,13 @@
         }
 
         &-desc {
+            position: relative;
             display: grid;
+            align-content: start;
+        }
+
+        &-additional{
+
         }
 
         &-title {
@@ -76,6 +82,7 @@
         }
 
         &-subtitle {
+            margin-top: 10px;
             font-weight: 500;
             font-size: 22px;
             line-height: 120%;
@@ -108,9 +115,11 @@
 
         }
         &-btns {
+            position: absolute;
+            bottom: 0;
             display: flex;
             justify-content: space-between;
-            align-self: end;
+            width: 100%;
             gap: 22px;
 
             a {

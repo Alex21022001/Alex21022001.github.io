@@ -357,7 +357,9 @@
   object-fit: cover;
 }
 .slider__item-desc {
+  position: relative;
   display: grid;
+  align-content: start;
 }
 .slider__item-title {
   font-weight: 700;
@@ -366,6 +368,7 @@
   color: #EEF3F3;
 }
 .slider__item-subtitle {
+  margin-top: 10px;
   font-weight: 500;
   font-size: 22px;
   line-height: 120%;
@@ -393,9 +396,11 @@
   display: none;
 }
 .slider__item-btns {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
-  align-self: end;
+  width: 100%;
   gap: 22px;
 }
 .slider__item-btns a {
@@ -480,6 +485,9 @@
   .projects .slider__next {
     right: 25px;
   }
+  .projects .slider__item-btns {
+    position: unset;
+  }
 }
 @media (max-width: 991px) {
   .aboutUs {
@@ -524,12 +532,12 @@
   }
   .projects .slider__item-text {
     margin-top: 0;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
   }
   .projects .slider__item-app {
     margin-top: 0;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
   }
   .projects .slider__item-more {
@@ -565,7 +573,7 @@
   }
   .projects .slider__item-btns {
     margin-top: 0;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     flex-direction: row;
   }
