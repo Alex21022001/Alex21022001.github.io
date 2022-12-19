@@ -2,15 +2,134 @@
     .promo {
         background-position-x: 32%;
     }
-    //.aboutUs{
-    //    min-height: 535px;
-    //}
+    .projects{
+        .slider__item{
+            grid-template-rows: auto;
+        }
+        .slider__item-btns{
+            margin-top: 20px;
+            flex-direction: column;
+            a{
+              width: 210px;
+            }
+        }
+        .slider__prev{
+            left: 25px;
+        }
+        .slider__next{
+            right: 25px;
+        }
+    }
 
 }
 
 @media (max-width: 991px) {
     .aboutUs{
         min-height: 655px;
+    }
+    .projects{
+        .md-none{
+            display: none;
+        }
+        .slider__indicators-adopt{
+            padding: 0;
+            margin: 0;
+            margin-top: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            li{
+                width: 15px;
+                height: 15px;
+                border-radius: 100%;
+                background: $white-color;
+                cursor: pointer;
+            }
+            .active{
+                background: $green-color;
+                cursor: auto;
+            }
+
+        }
+        .slider__item{
+            position: relative;
+            grid-template-columns: 1fr;
+            grid-template-rows: 250px 1fr;
+            &-desc{
+                display: block;
+            }
+            &-title{
+                margin-top: 20px;
+            }
+            &-subtitle{
+                margin-top: 10px;
+            }
+            &-text{
+                margin-top: 0;
+                height: 0;
+                overflow: hidden;
+            }
+            &-app{
+                margin-top: 0;
+                height: 0;
+                overflow: hidden;
+            }
+            &-more{
+                opacity: 1;
+                display: inline-block;
+                cursor: pointer;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: $white-color;
+                margin-top: 35px;
+                overflow: hidden;
+                transition: 0.4s;
+                background: transparent;
+
+
+                width: 195px;
+                height: 42px;
+                text-align: center;
+                padding: 10px 15px;
+                border: 2px solid #EEF3F3;
+                filter: drop-shadow(0px 4px 4px rgba(25, 29, 65, 0.25));
+                text-decoration: none;
+                &_active{
+                    margin-top: 0;
+                    height: 0;
+                    font-weight: 0;
+                    border: none;
+                    visibility: hidden;
+                }
+
+                &:hover {
+                    color: $green-color;
+                    border-color: $green-color;
+                }
+            }
+            &-btns{
+                margin-top: 0;
+                height: 0;
+                overflow: hidden;
+                flex-direction: row;
+                a{
+                    width: 210px;
+                }
+            }
+        }
+
+        .slider__prev{
+            top: 170px;
+            left: 0;
+        }
+
+        .slider__next{
+            top: 170px;
+            right: 0;
+        }
     }
 }
 

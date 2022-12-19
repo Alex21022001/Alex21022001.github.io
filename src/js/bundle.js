@@ -311,6 +311,42 @@ const moreInform = () => {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (moreInform);
 
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const slider = ()=>{
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider_more.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/slider_more.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const sliderMore = ()=>{
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sliderMore);
+
 /***/ })
 
 /******/ 	});
@@ -381,19 +417,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_languages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/languages */ "./src/js/modules/languages.js");
 /* harmony import */ var _modules_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/animation */ "./src/js/modules/animation.js");
 /* harmony import */ var _modules_moreInform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/moreInform */ "./src/js/modules/moreInform.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_slider_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider_more */ "./src/js/modules/slider_more.js");
 
 
 
 
 
 
-window.addEventListener("DOMContentLoaded",()=>{
+
+
+window.addEventListener("DOMContentLoaded", () => {
 
     (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
     (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
     (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
-    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11,"rgba(30, 30, 30, .1)","#2CBF96",0.935);
+    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11, "rgba(30, 30, 30, .1)", "#2CBF96", 0.935);
+    (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    (0,_modules_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 })();
 
