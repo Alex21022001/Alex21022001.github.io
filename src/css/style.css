@@ -27,15 +27,15 @@
   list-style: none;
 }
 .promo__menu-item a {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  text-transform: capitalize;
   color: #EEF3F3;
   text-decoration: none;
+  transition: color 0.3s;
 }
 .promo__menu-item a:hover {
-  text-decoration: underline;
+  color: #2CBF96;
 }
 .promo__text {
   margin-top: 110px;
@@ -49,14 +49,14 @@
   color: #EEF3F3;
 }
 .promo__text-subtitle {
-  margin-top: 30px;
+  margin-top: 37px;
   font-weight: 500;
   font-size: 30px;
   line-height: 32px;
   color: #EEF3F3;
 }
 .promo__text-description {
-  margin-top: 20px;
+  margin-top: 12px;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -242,15 +242,15 @@
 }
 .aboutUs__title {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 36px;
   line-height: 32px;
   color: #EEF3F3;
 }
 .aboutUs__description {
   transition: 2s all;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 150%;
   color: #EEF3F3;
   margin-top: 45px;
 }
@@ -268,12 +268,18 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  text-decoration: underline;
   color: #EEF3F3;
   margin-top: 25px;
   overflow: hidden;
   transition: 0.4s;
   height: 20px;
+  width: 195px;
+  height: 42px;
+  text-align: center;
+  padding: 10px 15px;
+  border: 2px solid #EEF3F3;
+  filter: drop-shadow(0px 4px 4px rgba(25, 29, 65, 0.25));
+  text-decoration: none;
 }
 .aboutUs__more-information_active {
   margin-top: 0;
@@ -281,6 +287,7 @@
 }
 .aboutUs__more-information:hover {
   color: #2CBF96;
+  border-color: #2CBF96;
 }
 .aboutUs__animation {
   height: 100%;

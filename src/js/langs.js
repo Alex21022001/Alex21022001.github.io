@@ -65,8 +65,8 @@ const allLangs = {
             "<span>Ukrainian Technology Transfer Team (UTTT LLC) Молода українська компанія ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\", що динамічно розвивається.</span>" +
             "<span>Основна діяльність спрямована на <i>бізнес-консалтинг</i>,розробку, підтримку та імплементацію, масштабування <i>інноваційних технологічних</i> проектів і стартапів.</span>",
         "en":
-            "<span>Ukrainian Technology Transfer Team (UTTT LLC) We are a young dynamically developing Ukrainian company ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\"</span>" +
-            "<span>The main activity is <i>business consulting</i>, development, support and implementation, and scaling of <i>innovative technological</i> projects and startups</span>"
+            "<span>Ukrainian Technology Transfer Team (UTTT LLC) We are a young dynamically developing Ukrainian company ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\".</span>" +
+            "<span>The main activity is <i>business consulting</i>, development, support and implementation, and scaling of <i>innovative technological</i> projects and startups.</span>"
     },
     "aboutUs__more-information":{
         "ua":"Більше про нас",
@@ -99,7 +99,7 @@ const allLangs = {
             "ones who going to improve life on Earth ecologically, systematically, and ethically.\n" +
             "<br><br>\n" +
             "<b>Our mission</b> is the development and spread of the conscious socially oriented business\n" +
-            "ideology in the globally integrated ecosystem of the world"
+            "ideology in the globally integrated ecosystem of the world."
     }
 
 }
