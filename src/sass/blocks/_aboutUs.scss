@@ -1,6 +1,6 @@
 .aboutUs {
     position: relative;
-    min-height: 525px;
+    min-height: 635px;
     background-color: $dark-color;
     overflow: hidden;
     padding: 125px 0 130px;
@@ -61,6 +61,9 @@
         &_active{
             margin-top: 0;
             height: 0;
+            font-weight: 0;
+            border: none;
+            visibility: hidden;
         }
 
         &:hover {

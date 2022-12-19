@@ -3,7 +3,7 @@ const moreInform = () => {
         parent = document.querySelector(".aboutUs__description"),
         content = parent.querySelector(".aboutUs__description_additional"),
         arrow = document.createElement("div"),
-        parentHeight = (parent.scrollHeight - content.scrollHeight) + "px";
+        parentHeight = (parent.scrollHeight - content.scrollHeight);
     let arrowElement;
 
     btn.addEventListener("click", () => {
@@ -11,9 +11,10 @@ const moreInform = () => {
         btn.classList.add("aboutUs__more-information_active");
         content.style.maxHeight = content.scrollHeight + "px";
 
-        if (window.screen.availWidth <768) {
-            parent.style.minHeight = parentHeight;
-        }
+        if (window.screen.availWidth < 768) {
+            parent.style.minHeight = (parentHeight + 42) + "px";
+        } else
+            parent.style.minHeight = (parentHeight - 70) + "px";
 
         arrow.classList.add("aboutUs__arrow");
         arrow.innerHTML = "<svg width=\"100%\" height=\"8\" viewBox=\"0 0 77 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
@@ -27,7 +28,7 @@ const moreInform = () => {
 
 
     arrow.addEventListener("click", function () {
-        content.style.maxHeight = "0px";
+        content.style.maxHeight = "15px";
         arrow.remove();
 
         setTimeout(() => {

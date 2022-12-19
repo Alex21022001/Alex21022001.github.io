@@ -230,7 +230,7 @@
 
 .aboutUs {
   position: relative;
-  min-height: 525px;
+  min-height: 635px;
   background-color: #1E1E1E;
   overflow: hidden;
   padding: 125px 0 130px;
@@ -283,6 +283,9 @@
 .aboutUs__more-information_active {
   margin-top: 0;
   height: 0;
+  font-weight: 0;
+  border: none;
+  visibility: hidden;
 }
 .aboutUs__more-information:hover {
   color: #2CBF96;
@@ -311,13 +314,10 @@
   .promo {
     background-position-x: 32%;
   }
-  .aboutUs {
-    min-height: 535px;
-  }
 }
 @media (max-width: 991px) {
   .aboutUs {
-    min-height: 555px;
+    min-height: 655px;
   }
 }
 @media (max-width: 767px) {
