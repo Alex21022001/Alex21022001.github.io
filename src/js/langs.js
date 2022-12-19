@@ -63,10 +63,10 @@ const allLangs = {
     "aboutUs__description":{
         "ua":
             "<span>Ukrainian Technology Transfer Team (UTTT LLC) Молода українська компанія ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\", що динамічно розвивається.</span>" +
-            "<span>Основна діяльність спрямована на <i>бізнес-консалтинг</i>,розробку, підтримку та імплементацію, масштабування <i>інноваційних технологічних</i> проектів і стартапів.</span>",
+            "<span>Основна діяльність спрямована на бізнес-консалтинг,розробку, підтримку та імплементацію, масштабування інноваційних технологічних проектів і стартапів.</span>",
         "en":
             "<span>Ukrainian Technology Transfer Team (UTTT LLC) We are a young dynamically developing Ukrainian company ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\".</span>" +
-            "<span>The main activity is <i>business consulting</i>, development, support and implementation, and scaling of <i>innovative technological</i> projects and startups.</span>"
+            "<span>The main activity is business consulting, development, support and implementation, and scaling of innovative technological projects and startups.</span>"
     },
     "aboutUs__more-information":{
         "ua":"Більше про нас",
