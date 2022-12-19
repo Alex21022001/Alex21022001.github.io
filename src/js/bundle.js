@@ -343,13 +343,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const sliderMore = ()=>{
     const moreBtn = document.querySelector(".slider__item-more"),
-        text = document.querySelector(".slider__item-text"),
-        app = document.querySelector(".slider__item-app"),
+        informationToShow = document.querySelector(".slider__item-additional"),
         btns= document.querySelector(".slider__item-btns");
 
     moreBtn.addEventListener("click",(e)=>{
         moreBtn.style.display = "none";
-
+        informationToShow.classList.add("slider__item-additional_active");
+        informationToShow.style.maxHeight = informationToShow.scrollHeight + "px";
+        setTimeout(()=>{
+            btns.style.maxHeight = btns.scrollHeight + "px";
+            btns.classList.add("slider__item-btns_active");
+        },1500);
     });
 }
 

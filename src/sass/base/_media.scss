@@ -63,22 +63,33 @@
             &-desc{
                 display: block;
             }
+            &-additional{
+                transition: 2s all;
+                max-height: 0;
+                margin: 0;
+                overflow: hidden;
+                .slider__item-text{
+                    margin: 0;
+                }
+                .slider__item-app{
+                    margin: 0;
+                }
+                &_active{
+                    .slider__item-text{
+                        margin-top: 10px;
+                    }
+                    .slider__item-app{
+                        margin-top: 10px;
+                    }
+                }
+            }
             &-title{
                 margin-top: 20px;
             }
             &-subtitle{
-                margin-top: 10px;
+                margin-top: 15px;
             }
-            &-text{
-                margin-top: 0;
-                max-height: 0;
-                overflow: hidden;
-            }
-            &-app{
-                margin-top: 0;
-                max-height: 0;
-                overflow: hidden;
-            }
+
             &-more{
                 opacity: 1;
                 display: inline-block;
@@ -120,6 +131,9 @@
                 flex-direction: row;
                 a{
                     width: 210px;
+                }
+                &_active{
+                    margin-top: 30px;
                 }
             }
         }

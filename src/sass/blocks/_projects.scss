@@ -3,7 +3,7 @@
         position: relative;
     }
 
-    padding: 160px 0;
+    padding: 124px 0;
     min-height: 1000px;
 
     &__title {
@@ -115,6 +115,7 @@
 
         }
         &-btns {
+            transition: 1s all;
             position: absolute;
             bottom: 0;
             display: flex;
