@@ -51,10 +51,10 @@
     &__slides {
         transition: 1.5s ease-out;
         display: flex;
-
     }
 
     &__item {
+        padding: 0 5px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: min(567px);

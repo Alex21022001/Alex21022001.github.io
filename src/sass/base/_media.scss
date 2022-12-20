@@ -35,11 +35,11 @@
             position: relative;
         }
         .slider__indicators{
-
+            padding-left: 30px;
             position: absolute;
             top: 320px;
             gap: 25px;
-            transform: translateX(95%);
+            transform: translateX(90%);
         }
         //.md-none{
         //    display: none;
@@ -66,6 +66,9 @@
         //    }
         //
         //}
+        .slider__slides{
+            transition: 1s all;
+        }
         .slider__item{
             position: relative;
             grid-template-columns: 1fr;
@@ -98,6 +101,7 @@
             }
             &-subtitle{
                 margin-top: 15px;
+                font-size: 20px;
             }
 
             &-more{

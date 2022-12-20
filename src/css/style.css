@@ -353,6 +353,7 @@
   display: flex;
 }
 .slider__item {
+  padding: 0 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 567px;
@@ -505,10 +506,14 @@
     position: relative;
   }
   .projects .slider__indicators {
+    padding-left: 30px;
     position: absolute;
     top: 320px;
     gap: 25px;
-    transform: translateX(95%);
+    transform: translateX(90%);
+  }
+  .projects .slider__slides {
+    transition: 1s all;
   }
   .projects .slider__item {
     position: relative;
@@ -541,6 +546,7 @@
   }
   .projects .slider__item-subtitle {
     margin-top: 15px;
+    font-size: 20px;
   }
   .projects .slider__item-more {
     opacity: 1;
