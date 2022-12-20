@@ -501,28 +501,14 @@
   .aboutUs {
     min-height: 655px;
   }
-  .projects .md-none {
-    display: none;
+  .projects .row {
+    position: relative;
   }
-  .projects .slider__indicators-adopt {
-    padding: 0;
-    margin: 0;
-    margin-top: 20px;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  .projects .slider__indicators-adopt li {
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    background: #EEF3F3;
-    cursor: pointer;
-  }
-  .projects .slider__indicators-adopt .active {
-    background: #2CBF96;
-    cursor: auto;
+  .projects .slider__indicators {
+    position: absolute;
+    top: 320px;
+    gap: 25px;
+    transform: translateX(95%);
   }
   .projects .slider__item {
     position: relative;
@@ -551,7 +537,7 @@
     margin-top: 10px;
   }
   .projects .slider__item-title {
-    margin-top: 20px;
+    margin-top: 35px;
   }
   .projects .slider__item-subtitle {
     margin-top: 15px;
