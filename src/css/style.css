@@ -345,6 +345,13 @@
 .slider__indicators-adopt {
   display: none;
 }
+.slider__inner {
+  overflow: hidden;
+}
+.slider__slides {
+  transition: 2s all;
+  display: flex;
+}
 .slider__item {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
