@@ -346,6 +346,10 @@ const slider = () => {
         indicator.setAttribute("data-slide-to", `${i}`);
         indicatorWrapper.append(indicator);
     }
+    if (window.screen.availWidth <992){
+        indicatorWrapper.style.width = parseInt(contentWidth) - 10 +"px";
+    }
+
 
     const indicators = document.querySelectorAll(".slider__indicators > li");
     sliderWrapper.style.width = slides.length * 100 + "%";

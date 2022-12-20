@@ -506,11 +506,13 @@
     position: relative;
   }
   .projects .slider__indicators {
-    padding-left: 30px;
+    padding: 0;
+    margin-top: 0;
     position: absolute;
-    top: 320px;
+    top: 340px;
     gap: 25px;
-    transform: translateX(90%);
+    justify-content: center;
+    transform: translateX(-9%);
   }
   .projects .slider__slides {
     transition: 1s all;
@@ -560,8 +562,8 @@
     overflow: hidden;
     transition: 0.4s;
     background: transparent;
-    width: 195px;
-    height: 42px;
+    width: 170px;
+    height: 38px;
     text-align: center;
     padding: 10px 15px;
     border: 2px solid #EEF3F3;
@@ -625,6 +627,27 @@
   .aboutUs__description_additional {
     overflow: hidden;
   }
+  .projects .slider__indicators {
+    transform: translateX(4%);
+  }
+  .projects .slider__prev {
+    width: 20px;
+    padding: 0;
+    left: -30px;
+  }
+  .projects .slider__next {
+    width: 20px;
+    padding: 0;
+    right: -30px;
+  }
+}
+@media (max-width: 630px) {
+  .projects .slider__prev {
+    left: -5px;
+  }
+  .projects .slider__next {
+    right: -5px;
+  }
 }
 @media (max-width: 576px) {
   .container {
@@ -683,6 +706,12 @@
   }
   .aboutUs__content-wrapper {
     background-color: rgba(30, 30, 30, 0.9);
+  }
+  .projects .slider__prev {
+    display: none;
+  }
+  .projects .slider__next {
+    display: none;
   }
 }
 @media (max-width: 424px) {
