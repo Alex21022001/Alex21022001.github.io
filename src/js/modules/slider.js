@@ -22,8 +22,8 @@ const slider = () => {
         indicator.setAttribute("data-slide-to", `${i}`);
         indicatorWrapper.append(indicator);
     }
-    if (window.screen.availWidth <992){
-        indicatorWrapper.style.width = parseInt(contentWidth) - 10 +"px";
+    if (window.screen.availWidth < 992) {
+        indicatorWrapper.style.width = parseInt(contentWidth) - 10 + "px";
     }
 
 
@@ -35,7 +35,7 @@ const slider = () => {
     });
 
     function doSlideMove() {
-        sliderWrapper.style.transform = `translateX(-${offset}px)`;
+        sliderWrapper.style.transform = `translate3d(-${offset}px,0px,0px)`;
 
         indicators.forEach((item, index) => {
             if (index === currentIndicator) {
@@ -47,9 +47,10 @@ const slider = () => {
         })
     }
 
+    function moveNext(e, prevent) {
+        if (prevent)
+            e.preventDefault();
 
-    next.addEventListener("click", (e) => {
-        e.preventDefault();
 
         if (offset >= parseInt(contentWidth) * (slides.length - 1)) {
             offset = 0;
@@ -62,10 +63,11 @@ const slider = () => {
         }
 
         doSlideMove();
-    });
+    }
 
-    prev.addEventListener("click", (e) => {
-        e.preventDefault();
+    function movePrev(e, prevent) {
+        if (prevent)
+            e.preventDefault();
 
         if (offset === 0) {
             offset = parseInt(contentWidth) * (slides.length - 1);
@@ -78,7 +80,7 @@ const slider = () => {
         }
 
         doSlideMove();
-    });
+    }
 
     indicators.forEach(item => {
         item.addEventListener("click", (e) => {
@@ -91,6 +93,55 @@ const slider = () => {
     })
 
 
+    sliderWrapper.style.transform = `translate3d(0px, 0px, 0px)`;
+
+    let posInit = 0,
+        posX1 = 0,
+        posX2 = 0,
+        posFinal = 0,
+        posThreshold = parseInt(slides[0].style.width) * .35,
+        middleWidth = parseInt(slides[0].style.width) / 2;
+
+
+    function swipeStart(e) {
+        posInit = posX1 = e.touches[0].clientX;
+        sliderWrapper.style.transition = "";
+
+
+        sliderInner.addEventListener("touchmove", swipeAction);
+        sliderInner.addEventListener("touchend", swipeEnd);
+    }
+
+    function swipeAction(e) {
+        let transform = +sliderWrapper.style.transform.match(/[-0-9.]+(?=px)/)[0];
+
+        posX2 = posX1 - e.touches[0].clientX;
+        posX1 = e.touches[0].clientX;
+
+
+        sliderWrapper.style.transform = `translate3d(${transform - posX2}px, 0px, 0px)`;
+    }
+
+    function swipeEnd(e) {
+        posFinal = posInit - posX1;
+
+        if (Math.abs(posFinal) > posThreshold && posInit > middleWidth && currentSlide !== slides.length - 1) {
+            moveNext(e, false);
+        }
+
+        if (Math.abs(posFinal) > posThreshold && posInit < middleWidth && currentSlide !== 0) {
+            movePrev(e, false);
+        }
+
+        if (posInit !== posX1) {
+            doSlideMove();
+        }
+    }
+
+    next.addEventListener("click", (e) => moveNext(e, true));
+    prev.addEventListener("click", (e) => movePrev(e, true));
+
+    sliderInner.addEventListener("touchstart", swipeStart);
 }
 
 export default slider;

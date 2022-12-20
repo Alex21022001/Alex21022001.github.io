@@ -627,6 +627,9 @@
   .aboutUs__description_additional {
     overflow: hidden;
   }
+  .projects {
+    padding-top: 65px;
+  }
   .projects .slider__indicators {
     transform: translateX(4%);
   }
