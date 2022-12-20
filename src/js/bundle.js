@@ -327,10 +327,11 @@ const slider = () => {
     const sliderWrapper = document.querySelector(".slider__slides"),
         sliderInner = document.querySelector(".slider__inner"),
         slides = document.querySelectorAll(".slider__item"),
+        mainWrapper = document.querySelector(".projects__slider"),
         indicatorWrapper = document.querySelector(".slider__indicators"),
         prev = document.querySelector(".slider__prev"),
         next = document.querySelector(".slider__next"),
-        contentWidth = sliderInner.clientWidth + "px";
+        contentWidth = mainWrapper.scrollWidth + "px";
 
 
     let offset = 0,
