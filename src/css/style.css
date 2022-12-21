@@ -544,7 +544,7 @@
     margin-top: 10px;
   }
   .projects .slider__item-title {
-    margin-top: 35px;
+    margin-top: 55px;
   }
   .projects .slider__item-subtitle {
     margin-top: 15px;
@@ -565,7 +565,7 @@
     width: 170px;
     height: 38px;
     text-align: center;
-    padding: 10px 15px;
+    padding: 2px 15px;
     border: 2px solid #EEF3F3;
     filter: drop-shadow(0px 4px 4px rgba(25, 29, 65, 0.25));
     text-decoration: none;
@@ -618,6 +618,9 @@
     padding: 0;
     min-height: 400px;
   }
+  .aboutUs__title {
+    font-size: 28px;
+  }
   .aboutUs__content-wrapper {
     padding: 100px 0;
     padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -629,6 +632,12 @@
   }
   .projects {
     padding-top: 65px;
+  }
+  .projects__slider {
+    margin-top: 45px;
+  }
+  .projects__title {
+    font-size: 28px;
   }
   .projects .slider__indicators {
     transform: translateX(4%);
@@ -710,6 +719,10 @@
   .aboutUs__content-wrapper {
     background-color: rgba(30, 30, 30, 0.9);
   }
+  .projects {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .projects .slider__indicators li {
     width: 12px;
     height: 12px;
@@ -763,6 +776,15 @@
   .promo__btn {
     width: 320px;
   }
+  .aboutUs__title {
+    font-size: 24px;
+  }
+  .projects__title {
+    font-size: 24px;
+  }
+  .projects .slider__item-more {
+    margin-top: 30px;
+  }
   .projects .slider__item-btns a {
     vertical-align: center;
     padding: 10px 15px;
@@ -806,6 +828,38 @@
   .hamburger__box {
     width: 25px;
     height: 3px;
+  }
+  .aboutUs__title {
+    font-size: 20px;
+  }
+  .aboutUs__description {
+    font-size: 14px;
+  }
+  .aboutUs__more-information {
+    font-size: 14px;
+    width: 160px;
+    height: 36px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+  }
+  .projects__title {
+    font-size: 20px;
+  }
+  .projects .slider__item-title {
+    font-size: 18px;
+  }
+  .projects .slider__item-subtitle {
+    font-size: 16px;
+  }
+  .projects .slider__item-text {
+    font-size: 14px;
+  }
+  .projects .slider__item-app {
+    font-size: 14px;
+  }
+  .projects .slider__item-btns {
+    gap: 10px;
   }
   .projects .slider__item-btns a {
     vertical-align: center;

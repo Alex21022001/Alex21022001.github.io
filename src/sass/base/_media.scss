@@ -90,7 +90,7 @@
             }
 
             &-title {
-                margin-top: 35px;
+                margin-top: 55px;
             }
 
             &-subtitle {
@@ -117,7 +117,7 @@
                 width: 170px;
                 height: 38px;
                 text-align: center;
-                padding: 10px 15px;
+                padding: 2px 15px;
                 border: 2px solid #EEF3F3;
                 filter: drop-shadow(0px 4px 4px rgba(25, 29, 65, 0.25));
                 text-decoration: none;
@@ -186,6 +186,11 @@
         padding: 0;
         min-height: 400px;
 
+        &__title{
+            font-size: 28px;
+        }
+
+
         &__content-wrapper {
             padding: 100px 0;
             padding-right: calc(var(--bs-gutter-x) * .5);
@@ -202,6 +207,12 @@
 
     .projects {
         padding-top: 65px;
+        &__slider{
+            margin-top: 45px;
+        }
+        &__title{
+            font-size: 28px;
+        }
         .slider__indicators {
             transform: translateX(4%);
         }
@@ -311,7 +322,8 @@
     }
 
     .projects {
-
+        padding-right: 20px;
+        padding-left: 20px;
         .slider__indicators{
             li{
                 width: 12px;
@@ -391,8 +403,19 @@
             width: 320px;
         }
     }
+    .aboutUs{
+        &__title{
+            font-size: 24px;
+        }
+    }
 
     .projects {
+        &__title{
+            font-size: 24px;
+        }
+        .slider__item-more{
+            margin-top: 30px;
+        }
 
         .slider__item-btns{
             a{
@@ -451,9 +474,46 @@
         }
     }
 
+    .aboutUs{
+        &__title{
+            font-size: 20px;
+        }
+        &__description{
+            font-size: 14px;
+        }
+        &__more-information{
+            font-size: 14px;
+            width: 160px;
+            height: 36px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            vertical-align: middle;
+        }
+    }
+
     .projects{
+        &__title{
+            font-size: 20px;
+        }
+        .slider__item{
+            &-title{
+                font-size: 18px;
+            }
+            &-subtitle{
+                font-size: 16px;
+            }
+            &-text{
+                font-size: 14px;
+            }
+            &-app{
+                font-size: 14px;
+            }
+
+        }
         .slider__item-btns{
+            gap: 10px;
             a{
+
                 vertical-align: center;
                 padding: 10px 0px;
                 width: 120px;
