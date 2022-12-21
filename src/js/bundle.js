@@ -597,9 +597,6 @@ window.addEventListener("DOMContentLoaded", () => {
     (0,_modules_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
 
 
-    window.addEventListener("resize",()=>{
-        (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
-    })
 });
 })();
 
