@@ -18,7 +18,4 @@ window.addEventListener("DOMContentLoaded", () => {
     slider_more();
 
 
-    window.addEventListener("resize",()=>{
-        slider();
-    })
 });
