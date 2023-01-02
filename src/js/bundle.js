@@ -106,6 +106,34 @@ const animation = (font, background, color, speed) => {
 
 /***/ }),
 
+/***/ "./src/js/modules/downloadPDF.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/downloadPDF.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const downloadPDF = () => {
+    const pdfBtns = document.querySelectorAll("[data-pdf-btn]"),
+        lang = localStorage.getItem("lang");
+
+    pdfBtns.forEach(changePDFAccordingLang)
+
+    function changePDFAccordingLang(btn) {
+        const href = lang === "ua" ?
+            btn.getAttribute("href")
+                .replaceAll(/(EN)/gi, "UA") : btn.getAttribute("href");
+        btn.setAttribute("href",href);
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (downloadPDF);
+
+/***/ }),
+
 /***/ "./src/js/modules/hamburger.js":
 /*!*************************************!*\
   !*** ./src/js/modules/hamburger.js ***!
@@ -580,6 +608,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_moreInform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/moreInform */ "./src/js/modules/moreInform.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_slider_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider_more */ "./src/js/modules/slider_more.js");
+/* harmony import */ var _modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/downloadPDF */ "./src/js/modules/downloadPDF.js");
+
 
 
 
@@ -591,14 +621,53 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener("DOMContentLoaded", () => {
 
-    (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
-    (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
-    (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
-    (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11, "rgba(30, 30, 30, .1)", "#2CBF96", 0.935);
-    (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
-    (0,_modules_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    try {
+        (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    } catch (e) {
+        console.log("Something wrong in hamburger module. " + e);
+    }
 
+    try {
+        (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    } catch (e) {
+        console.log("Something wrong in adaptation module. " + e);
+    }
+
+    try {
+       (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    } catch (e) {
+        console.log("Something wrong in languages module. " + e);
+    }
+
+    try {
+        (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    } catch (e) {
+        console.log("Something wrong in moreInformation module. " + e);
+    }
+
+    try {
+        (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11, "rgba(30, 30, 30, .1)", "#2CBF96", 0.935);
+    } catch (e) {
+        console.log("Something wrong in animation module. " + e);
+    }
+
+    try {
+        (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    } catch (e) {
+        console.log("Something wrong in slider module. " + e);
+    }
+
+    try {
+        (0,_modules_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    } catch (e) {
+        console.log("Something wrong in slider_more module. " + e);
+    }
+
+    try {
+        (0,_modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    } catch (e) {
+        console.log("Something wrong in downloadPDF module. " + e);
+    }
 
 });
 })();
