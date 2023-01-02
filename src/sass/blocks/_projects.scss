@@ -27,7 +27,9 @@
         margin-top: 20px;
         list-style: none;
         display: flex;
-        justify-content: space-around;
+        //justify-content: space-around;
+        justify-content: center;
+        gap: 20px;
         li{
             width: 15px;
             height: 15px;

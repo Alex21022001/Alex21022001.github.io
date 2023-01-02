@@ -36,7 +36,7 @@ const allLangs = {
     "menu__contacts": {
         "ua": "Контакти",
         "en": "Contacts"
-    },"mb_menu__about": {
+    }, "mb_menu__about": {
         "ua": "Про Нас",
         "en": "About Us"
     },
@@ -56,11 +56,11 @@ const allLangs = {
         "ua": "Контакти",
         "en": "Contacts"
     },
-    "aboutUs__title":{
+    "aboutUs__title": {
         "ua": "Про нас",
         "en": "About Us"
     },
-    "aboutUs__description":{
+    "aboutUs__description": {
         "ua":
             "<span>Ukrainian Technology Transfer Team (UTTT LLC) Молода українська компанія ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\", що динамічно розвивається.</span>" +
             "<span>Основна діяльність спрямована на бізнес-консалтинг,розробку, підтримку та імплементацію, масштабування інноваційних технологічних проектів і стартапів.</span>",
@@ -68,9 +68,9 @@ const allLangs = {
             "<span>Ukrainian Technology Transfer Team (UTTT LLC) We are a young dynamically developing Ukrainian company ТОВ \"Юкрейніан Текнолоджи Трансфер Тим\".</span>" +
             "<span>The main activity is business consulting, development, support and implementation, and scaling of innovative technological projects and startups.</span>"
     },
-    "aboutUs__more-information":{
-        "ua":"Більше про нас",
-        "en":"More information"
+    "aboutUs__more-information": {
+        "ua": "Більше про нас",
+        "en": "More information"
     },
     "aboutUs__description_additional": {
         "ua":
@@ -100,6 +100,32 @@ const allLangs = {
             "<br><br>\n" +
             "<b>Our mission</b> is the development and spread of the conscious socially oriented business\n" +
             "ideology in the globally integrated ecosystem of the world."
-    }
+    },
+
+
+    "projects .projects__title": {
+        "ua": "Проєкти"
+    },
+    "projects .slider__item-btns a": {
+        "ua": "Скачати .PDF"
+    },
+    //SLIDE 1
+    "slider__item_slide-1 .slider__item-title": {
+        "ua": "БГЕС"
+    },
+    "slider__item_slide-1 .slider__item-subtitle": {
+        "ua": "Безгребельна електростанція БГЕС технологія "
+    },
+    "slider__item_slide-1 .slider__item-text": {
+        "ua": "БГЕС являє собою енергетичний комплекс, що використовує відновлюване, практично невичерпне джерело енергії потоків води, і дозволяє виробляти дешеву електроенергію в обсягах, достатніх не тільки для окремих регіонів, але навіть для цілих континентів, з високою економічною ефективністю і стабільною величиною встановленої генерації. При цьому БГЕС, що розміщена всередині потоку на певній глибині, не перешкоджає судноплавству, не руйнує підводну екосистему, не спотворює ландшафт місцевості, не забруднює навколишнє середовище. Коефіцієнт використання встановленої потужності БГЕС наближається до значень такого у гребельних гідроелектростанцій і перевершує сонячні, вітрові та хвильові."
+    },
+    "slider__item_slide-1 .slider__item-app": {
+        "ua": "<span>ЗАСТОСУВАННЯ</span> <br> Колісний і рейковий транспорт, де використовуються фрикційні гальма."
+    },
+    //SLIDE 2
+    // "slider__item_slide-2":{
+    //
+    // }
+
 
 }

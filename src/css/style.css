@@ -329,7 +329,8 @@
   margin-top: 20px;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
 }
 .slider__indicators li {
   width: 15px;
