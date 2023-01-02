@@ -483,7 +483,7 @@
 }
 
 .team {
-  padding-top: 160px;
+  padding-top: 124px;
   min-height: 440px;
 }
 .team__title {
@@ -501,6 +501,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 232px);
   grid-template-rows: repeat(auto-fill, 350px);
+  grid-auto-rows: 350px;
   justify-content: center;
   column-gap: 18px;
   row-gap: 20px;
@@ -511,6 +512,7 @@
   padding-bottom: 65px;
   background: #EEF3F3;
   transition: 0.6s all;
+  overflow: hidden;
 }
 .team__card-item_img {
   width: 145px;
@@ -518,7 +520,7 @@
   margin: 0 auto;
   border-radius: 100%;
   overflow: hidden;
-  transition: 0.2s all;
+  transition: 0.3s all;
 }
 .team__card-item_img img {
   width: 100%;
@@ -529,9 +531,8 @@
   text-align: center;
   overflow: hidden;
   max-height: 0;
-  transition: 0.1s max-height;
   position: absolute;
-  padding: 0 36px;
+  padding: 0 32px;
   min-width: 160px;
   margin-top: 0;
   font-weight: 400;
@@ -539,8 +540,7 @@
   line-height: 18px;
 }
 .team__card-item_title {
-  transition: 0.5s all;
-  padding: 0 45px;
+  padding: 0 25px;
   margin: 0;
   margin-top: 28px;
   font-weight: 700;
@@ -548,9 +548,9 @@
   line-height: 22px;
   text-align: center;
   color: #2CBF96;
+  opacity: 1;
 }
 .team__card-item_subtitle {
-  transition: 0.5s all;
   margin-top: 10px;
   font-weight: 400;
   font-size: 16px;
@@ -558,9 +558,13 @@
   text-align: center;
 }
 .team__card-item_media {
+  transition: 0.5s all;
   position: absolute;
-  display: none;
-  bottom: 0;
+  display: flex;
+  bottom: -10%;
+  transform: translateX(50%);
+  justify-content: center;
+  gap: 20px;
 }
 .team__card-item:hover {
   padding: 0;
@@ -581,12 +585,8 @@
   display: none;
 }
 .team__card-item:hover .team__card-item_media {
-  transform: translateX(50%);
   bottom: 25px;
-  display: flex;
   margin-top: 21px;
-  justify-content: center;
-  gap: 20px;
 }
 
 @media (max-width: 1200px) {
