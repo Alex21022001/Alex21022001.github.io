@@ -309,6 +309,7 @@
 
 .projects {
   padding: 124px 0;
+  padding-bottom: 0;
   min-height: 700px;
 }
 .projects .row {
@@ -424,10 +425,15 @@
   text-align: center;
   color: #EEF3F3;
   padding: 16px 16px;
-  width: 231px;
+  width: 210px;
   height: 54px;
   border: 2px solid #EEF3F3;
   filter: drop-shadow(0px 4px 4px rgba(25, 29, 65, 0.25));
+  transition: color 0.3s;
+}
+.slider__item-btns a:hover {
+  color: #2CBF96;
+  border-color: #2CBF96;
 }
 .slider__item-btn {
   margin-top: 65px;
@@ -719,6 +725,8 @@
     min-height: 400px;
   }
   .aboutUs__content-wrapper {
+    padding-top: 70px;
+    padding-bottom: 50px;
     background-color: rgba(30, 30, 30, 0.9);
   }
   .projects {
