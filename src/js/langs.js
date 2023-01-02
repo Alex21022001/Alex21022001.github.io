@@ -1,61 +1,89 @@
 const allLangs = {
-    "promo__text-title": {
+    /// PROMO ///
+    "promo .promo__text-title":{
         "ua": "Українська команда трансферу технологій" + "<br>(UTTTLLC)",
-        "en": "Ukrainian Technology Transfer Team <br>(UTTT LLC)"
     },
-    "promo__text-subtitle": {
+    "promo .promo__text-subtitle":{
         "ua": "Високотехнологічні рішення для створення бізнес-моделей лідерів ринку",
-        "en": "High-Tech Solutions For Creating Market Leaders' Business Models"
     },
-    "promo__text-description": {
+    "promo .promo__text-description":{
         "ua": "Майстерність монетизації ідей і смислів.<br> \n" +
             "Синергія результатів і корисності для світу. <br>\n" +
             "Фокус - можливості та прибуток. <br>\n" +
             "Концепція - тотальне домінування на ринку.",
-        "en": "Mastery for monetizing ideas and meanings.<br>" +
-            "Synergy of results and usefulness to the world. <br>" +
-            "Focus - opportunities and profit. <br>" +
-            "Concept - total market dominance."
     },
-    "menu__about": {
-        "ua": "Про Нас",
-        "en": "About Us"
+    // "promo__text-title": {
+    //     "ua": "Українська команда трансферу технологій" + "<br>(UTTTLLC)",
+    //     "en": "Ukrainian Technology Transfer Team <br>(UTTT LLC)"
+    // },
+    // "promo__text-subtitle": {
+    //     "ua": "Високотехнологічні рішення для створення бізнес-моделей лідерів ринку",
+    //     "en": "High-Tech Solutions For Creating Market Leaders' Business Models"
+    // },
+    // "promo__text-description": {
+    //     "ua": "Майстерність монетизації ідей і смислів.<br> \n" +
+    //         "Синергія результатів і корисності для світу. <br>\n" +
+    //         "Фокус - можливості та прибуток. <br>\n" +
+    //         "Концепція - тотальне домінування на ринку.",
+    //     "en": "Mastery for monetizing ideas and meanings.<br>" +
+    //         "Synergy of results and usefulness to the world. <br>" +
+    //         "Focus - opportunities and profit. <br>" +
+    //         "Concept - total market dominance."
+    // },
+    "promo .menu-about":{
+        "ua": "Про нас",
     },
-    "menu__projects": {
+    "promo .menu-projects":{
         "ua": "Проєкти",
-        "en": "Projects"
     },
-    "menu__team": {
+    "promo .menu-team":{
         "ua": "Команда",
-        "en": "Team"
     },
-    "menu__partners": {
-        "ua": "Наші Партнери",
-        "en": "Our Partners"
+    "promo .menu-partners":{
+        "ua": "Наші партнери",
     },
-    "menu__contacts": {
+    "promo .menu-contacts":{
         "ua": "Контакти",
-        "en": "Contacts"
-    }, "mb_menu__about": {
-        "ua": "Про Нас",
-        "en": "About Us"
     },
-    "mb_menu__projects": {
-        "ua": "Проєкти",
-        "en": "Projects"
-    },
-    "mb_menu__team": {
-        "ua": "Команда",
-        "en": "Team"
-    },
-    "mb_menu__partners": {
-        "ua": "Наші Партнери",
-        "en": "Our Partners"
-    },
-    "mb_menu__contacts": {
-        "ua": "Контакти",
-        "en": "Contacts"
-    },
+    // "menu__about": {
+    //     "ua": "Про Нас",
+    //     "en": "About Us"
+    // },
+    // "menu__projects": {
+    //     "ua": "Проєкти",
+    //     "en": "Projects"
+    // },
+    // "menu__team": {
+    //     "ua": "Команда",
+    //     "en": "Team"
+    // },
+    // "menu__partners": {
+    //     "ua": "Наші Партнери",
+    //     "en": "Our Partners"
+    // },
+    // "menu__contacts": {
+    //     "ua": "Контакти",
+    //     "en": "Contacts"
+    // }, "mb_menu__about": {
+    //     "ua": "Про Нас",
+    //     "en": "About Us"
+    // },
+    // "mb_menu__projects": {
+    //     "ua": "Проєкти",
+    //     "en": "Projects"
+    // },
+    // "mb_menu__team": {
+    //     "ua": "Команда",
+    //     "en": "Team"
+    // },
+    // "mb_menu__partners": {
+    //     "ua": "Наші Партнери",
+    //     "en": "Our Partners"
+    // },
+    // "mb_menu__contacts": {
+    //     "ua": "Контакти",
+    //     "en": "Contacts"
+    // },
     "aboutUs__title": {
         "ua": "Про нас",
         "en": "About Us"
