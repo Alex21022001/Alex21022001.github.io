@@ -77,11 +77,45 @@ const allLangs = {
     },
     "slider__item_slide-1 .slider__item-more":{
         "ua":"Більше..."
-    }
+    },
     //SLIDE 2
     // "slider__item_slide-2":{
     //
     // }
 
+
+    /// TEAM ///
+
+    "team .team__title":{
+        "ua":"Команда"
+    },
+    //First
+    "team__card-item-1 .team__card-item_desc":{
+        "ua":"Найкраща у стратегії та антикризового менеджменту, фінансів, інвестицій, аналітики"
+    },
+    "team__card-item-1 .team__card-item_subtitle":{
+        "ua":"Сергієнко Олена"
+    },
+    //Second
+    "team__card-item-2 .team__card-item_desc":{
+        "ua":"Кращій у R&D, інформаційних технологіях, безпеці"
+    },
+    "team__card-item-2 .team__card-item_subtitle":{
+        "ua":"Соснов Ігор"
+    },
+    //Third
+    "team__card-item-3 .team__card-item_desc":{
+        "ua":"Найкращій у вирішенні повсякденних завдань і моніторингу процесу, управління фінансами проектів"
+    },
+    "team__card-item-3 .team__card-item_subtitle":{
+        "ua":"Самус Павло"
+    },
+    //Fourth
+    "team__card-item-4 .team__card-item_desc":{
+        "ua":"Найкращій у маркетингу, продажах, комерції, співпраці та нетворкінгу"
+    },
+    "team__card-item-4 .team__card-item_subtitle":{
+        "ua":"Застояла Євген"
+    },
 
 }
