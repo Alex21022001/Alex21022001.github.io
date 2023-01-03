@@ -618,11 +618,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+document.body.onload = function () {
+    setTimeout(() => {
+        const preloader = document.querySelector(".preloader");
+
+        if (!preloader.classList.contains("preloader_done")) {
+            preloader.classList.add("preloader_done");
+            document.body.classList.add("preloader-body_done");
+        }
+    }, 600);
+
+}
 
 window.addEventListener("DOMContentLoaded", () => {
 
     try {
-        (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
+        ;(0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
     } catch (e) {
         console.log("Something wrong in hamburger module. " + e);
     }
@@ -668,6 +679,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
         console.log("Something wrong in downloadPDF module. " + e);
     }
+
 
 });
 })();
