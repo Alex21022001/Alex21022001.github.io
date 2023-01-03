@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-       languages();
+        languages();
     } catch (e) {
         console.log("Something wrong in languages module. " + e);
     }

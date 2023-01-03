@@ -634,7 +634,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-       (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
+        (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
     } catch (e) {
         console.log("Something wrong in languages module. " + e);
     }

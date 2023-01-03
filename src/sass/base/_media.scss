@@ -36,6 +36,7 @@
         min-height: 655px;
     }
     .projects {
+        min-height: 600px;
         .row {
             position: relative;
         }
@@ -186,11 +187,11 @@
         padding: 0;
         min-height: 400px;
 
-        &__title{
+        &__title {
             font-size: 28px;
         }
 
-        &__content-wrapper{
+        &__content-wrapper {
             padding: 100px 0;
             padding-right: calc(var(--bs-gutter-x) * .5);
             padding-left: calc(var(--bs-gutter-x) * .5);
@@ -206,12 +207,15 @@
 
     .projects {
         padding-top: 65px;
-        &__slider{
+
+        &__slider {
             margin-top: 45px;
         }
-        &__title{
+
+        &__title {
             font-size: 28px;
         }
+
         .slider__indicators {
             transform: translateX(4%);
         }
@@ -230,6 +234,21 @@
             width: 20px;
             padding: 0;
             right: -30px;
+        }
+
+    }
+
+    .team {
+        padding-top: 55px;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__card {
+            &-wrapper {
+                padding: 0;
+            }
         }
     }
 }
@@ -325,15 +344,18 @@
     .projects {
         padding-right: 20px;
         padding-left: 20px;
-        .slider__indicators{
-            li{
+
+        .slider__indicators {
+            li {
                 width: 12px;
                 height: 12px;
             }
         }
-        .slider__item-subtitle{
+
+        .slider__item-subtitle {
             font-size: 18px;
         }
+
         .slider__prev {
             display: none;
         }
@@ -341,16 +363,18 @@
         .slider__next {
             display: none;
         }
-        .slider__item-btns{
 
-            a{
+        .slider__item-btns {
+
+            a {
                 vertical-align: center;
                 padding: 10px 15px;
                 width: 165px;
                 height: 45px;
                 font-size: 15px;
             }
-            .slider__item-btn{
+
+            .slider__item-btn {
                 padding: 10px 15px;
                 width: 165px;
                 height: 45px;
@@ -393,31 +417,46 @@
             width: 320px;
         }
     }
-    .aboutUs{
-        &__title{
+    .aboutUs {
+        &__title {
             font-size: 24px;
         }
     }
 
     .projects {
-        &__title{
+        &__title {
             font-size: 24px;
         }
-        .slider__item-more{
+
+        .slider__item-more {
             margin-top: 30px;
         }
 
-        .slider__item-btns{
-            a{
+        .slider__item-btns {
+            a {
                 vertical-align: center;
                 padding: 10px 15px;
                 width: 140px;
                 font-size: 14px;
             }
-            .slider__item-btn{
+
+            .slider__item-btn {
                 padding: 10px 10px;
                 width: 140px;
                 font-size: 14px;
+            }
+        }
+    }
+
+    .team {
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__card {
+            &-wrapper {
+                padding: 0;
             }
         }
     }
@@ -464,14 +503,16 @@
         }
     }
 
-    .aboutUs{
-        &__title{
+    .aboutUs {
+        &__title {
             font-size: 20px;
         }
-        &__description{
+
+        &__description {
             font-size: 14px;
         }
-        &__more-information{
+
+        &__more-information {
             font-size: 14px;
             width: 160px;
             height: 36px;
@@ -481,36 +522,42 @@
         }
     }
 
-    .projects{
-        &__title{
+    .projects {
+        &__title {
             font-size: 20px;
         }
-        .slider__item{
-            &-title{
+
+        .slider__item {
+            &-title {
                 font-size: 18px;
             }
-            &-subtitle{
+
+            &-subtitle {
                 font-size: 16px;
             }
-            &-text{
+
+            &-text {
                 font-size: 14px;
             }
-            &-app{
+
+            &-app {
                 font-size: 14px;
             }
 
         }
-        .slider__item-btns{
+
+        .slider__item-btns {
             gap: 10px;
 
-            a{
+            a {
 
                 vertical-align: center;
                 padding: 10px 0px;
                 width: 120px;
                 font-size: 14px;
             }
-            .slider__item-btn{
+
+            .slider__item-btn {
                 padding: 10px 0px;
                 width: 120px;
                 font-size: 14px;

@@ -617,6 +617,9 @@
   .aboutUs {
     min-height: 655px;
   }
+  .projects {
+    min-height: 600px;
+  }
   .projects .row {
     position: relative;
   }
@@ -767,6 +770,15 @@
     padding: 0;
     right: -30px;
   }
+  .team {
+    padding-top: 55px;
+  }
+  .team__title {
+    font-size: 28px;
+  }
+  .team__card-wrapper {
+    padding: 0;
+  }
 }
 @media (max-width: 630px) {
   .projects .slider__prev {
@@ -912,6 +924,12 @@
     padding: 10px 10px;
     width: 140px;
     font-size: 14px;
+  }
+  .team__title {
+    font-size: 24px;
+  }
+  .team__card-wrapper {
+    padding: 0;
   }
 }
 @media (max-width: 350px) {
