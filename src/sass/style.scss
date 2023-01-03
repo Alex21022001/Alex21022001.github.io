@@ -9,6 +9,10 @@
 .container{
     padding: 0;
 }
+.body{
+    transition: 1s all;
+    overflow: hidden;
+}
 
 
 
@@ -21,6 +25,7 @@
 @import "blocks/projects";
 @import "blocks/rest";
 @import "blocks/team";
+@import "blocks/preloader";
 
 @import "base/media";
 

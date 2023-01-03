@@ -7,6 +7,17 @@ import slider from "./modules/slider";
 import slider_more from "./modules/slider_more";
 import downloadPDF from "./modules/downloadPDF";
 
+document.body.onload = function () {
+    setTimeout(() => {
+        const preloader = document.querySelector(".preloader");
+
+        if (!preloader.classList.contains("preloader_done")) {
+            preloader.classList.add("preloader_done");
+            document.body.classList.add("preloader-body_done");
+        }
+    }, 300);
+
+}
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -57,5 +68,6 @@ window.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
         console.log("Something wrong in downloadPDF module. " + e);
     }
+
 
 });
