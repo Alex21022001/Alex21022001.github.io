@@ -75,7 +75,7 @@
             align-content: start;
         }
 
-        &-additional{
+        &-additional {
 
         }
 
@@ -115,10 +115,11 @@
             }
         }
 
-        &-more{
+        &-more {
             display: none;
 
         }
+
         &-btns {
             transition: 1s all;
             position: absolute;
@@ -144,7 +145,8 @@
                 border: 2px solid #EEF3F3;
                 filter: drop-shadow(0px 4px 4px rgba(25, 29, 65, 0.25));
                 transition: color .3s;
-                &:hover{
+
+                &:hover {
                     color: $green-color;
                     border-color: $green-color;
                 }
