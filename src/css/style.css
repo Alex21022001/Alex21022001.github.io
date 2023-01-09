@@ -821,7 +821,7 @@
     right: -30px;
   }
   .team {
-    padding-top: 55px;
+    padding-top: 65px;
   }
   .team__title {
     font-size: 28px;
@@ -927,6 +927,9 @@
     width: 165px;
     height: 45px;
     font-size: 15px;
+  }
+  .team {
+    padding-top: 75px;
   }
 }
 @media (max-width: 424px) {

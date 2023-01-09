@@ -367,6 +367,7 @@ const slider = () => {
 
     let offset = 0,
         currentSlide = 0,
+        prevSlideNumber = 0,
         currentIndicator = 0;
 
 
@@ -384,11 +385,32 @@ const slider = () => {
 
 
     const indicators = document.querySelectorAll(".slider__indicators > li");
+
     sliderWrapper.style.width = slides.length * 100 + "%";
 
     slides.forEach(item => {
         item.style.width = contentWidth;
     });
+
+    function hideSlideDesc() {
+        const moreBtns = document.querySelectorAll(".slider__item-more");
+
+        moreBtns.forEach(btn => {
+            const informationToShow = btn.parentElement.querySelector(".slider__item-additional");
+            const btns = btn.parentElement.querySelector(".slider__item-btns");
+
+            if (btns.classList.contains("slider__item-btns_active")) {
+                setTimeout(() => {
+                    btn.style.display = "block";
+                }, 2000);
+            }
+
+            informationToShow.classList.remove("slider__item-additional_active");
+            informationToShow.style.maxHeight = 0;
+            btns.style.maxHeight = 0;
+            btns.classList.remove("slider__item-btns_active");
+        })
+    }
 
     function doSlideMove() {
         sliderWrapper.style.transform = `translate3d(-${offset}px,0px,0px)`;
@@ -399,8 +421,11 @@ const slider = () => {
             } else {
                 item.classList.remove("active");
             }
-
-        })
+        });
+        if (prevSlideNumber !== currentSlide) {
+            hideSlideDesc();
+            prevSlideNumber = currentSlide;
+        }
     }
 
     function moveNext(e, prevent) {
@@ -532,6 +557,15 @@ const sliderMore = () => {
             }, 1500);
         });
     })
+}
+
+const hideSlideDesc=()=>{
+    const moreBtns = document.querySelectorAll(".slider__item-more");
+    const informationToShow = btn.parentElement.querySelector(".slider__item-additional");
+    const btns = btn.parentElement.querySelector(".slider__item-btns");
+
+
+
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sliderMore);

@@ -18,4 +18,13 @@ const sliderMore = () => {
     })
 }
 
+const hideSlideDesc=()=>{
+    const moreBtns = document.querySelectorAll(".slider__item-more");
+    const informationToShow = btn.parentElement.querySelector(".slider__item-additional");
+    const btns = btn.parentElement.querySelector(".slider__item-btns");
+
+
+
+}
+
 export default sliderMore;
