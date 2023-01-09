@@ -47,12 +47,12 @@ const slider = () => {
                 setTimeout(() => {
                     btn.style.display = "block";
                 }, 2000);
-            }
 
-            informationToShow.classList.remove("slider__item-additional_active");
-            informationToShow.style.maxHeight = 0;
-            btns.style.maxHeight = 0;
-            btns.classList.remove("slider__item-btns_active");
+                informationToShow.classList.remove("slider__item-additional_active");
+                informationToShow.style.maxHeight = 0;
+                btns.style.maxHeight = 0;
+                btns.classList.remove("slider__item-btns_active");
+            }
         })
     }
 

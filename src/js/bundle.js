@@ -134,6 +134,70 @@ const downloadPDF = () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const form = () => {
+    const forms = document.querySelectorAll("form");
+
+    let name = false,
+        email = false,
+        phone = true,
+        checked = false;
+
+    forms.forEach(item => {
+        item.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            if (name && email && checked && phone) {
+                console.log("Success");
+            } else {
+                console.log("Error");
+            }
+        });
+
+        const inputs = item.querySelectorAll("input:not(#agreement,[name='phone'])"),
+            checkbox = item.querySelector("#agreement");
+
+        checkbox.addEventListener("change", (e) => {
+            checked = e.target.checked;
+        });
+
+        inputs.forEach(validateInput);
+    });
+
+
+    function validateInput(input) {
+
+        input.addEventListener("input", (e) => {
+            const target = e.target;
+
+            if (target.value.length > 21)
+                target.value = target.value.substring(0, 21);
+
+            if (target.getAttribute("name") === "email") {
+                email = target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi) ? true : false;
+            }
+
+            if (target.getAttribute("name") === "full-name") {
+                name = target.value.length > 3;
+            }
+        });
+    }
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (form);
+
+/***/ }),
+
 /***/ "./src/js/modules/hamburger.js":
 /*!*************************************!*\
   !*** ./src/js/modules/hamburger.js ***!
@@ -403,12 +467,12 @@ const slider = () => {
                 setTimeout(() => {
                     btn.style.display = "block";
                 }, 2000);
-            }
 
-            informationToShow.classList.remove("slider__item-additional_active");
-            informationToShow.style.maxHeight = 0;
-            btns.style.maxHeight = 0;
-            btns.classList.remove("slider__item-btns_active");
+                informationToShow.classList.remove("slider__item-additional_active");
+                informationToShow.style.maxHeight = 0;
+                btns.style.maxHeight = 0;
+                btns.classList.remove("slider__item-btns_active");
+            }
         })
     }
 
@@ -643,6 +707,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_slider_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider_more */ "./src/js/modules/slider_more.js");
 /* harmony import */ var _modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/downloadPDF */ "./src/js/modules/downloadPDF.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+
 
 
 
@@ -710,6 +776,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     try {
         (0,_modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    } catch (e) {
+        console.log("Something wrong in downloadPDF module. " + e);
+    }
+
+    try {
+        (0,_modules_form__WEBPACK_IMPORTED_MODULE_8__["default"])();
     } catch (e) {
         console.log("Something wrong in downloadPDF module. " + e);
     }

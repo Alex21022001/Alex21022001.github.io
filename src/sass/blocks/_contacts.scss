@@ -1,0 +1,99 @@
+.contacts{
+    padding-top: 124px;
+    &__title{
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 100%;
+        color: $white-color;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 44px;
+    }
+    &__btn{
+        @include main-btn();
+        padding: 16px 30px;
+        width: 182px;
+        height: 56px;
+        margin-top: 10px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        input:not(#agreement){
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid $white-color;
+            outline: none;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: $white-color;
+            padding: 4px 0;
+            margin-top: 12px;
+            &:hover{
+                border-bottom: 1px solid $green-color;
+            }
+        }
+
+
+        label:not(.contacts__agreement-label){
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            span{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 150%;
+                color: $white-color;
+            }
+            .input-without_error{
+                display: none;
+                position: absolute;
+                right: 0;
+                bottom: 7px;
+            }
+        }
+
+
+        .contacts__agreement-label{
+            display: flex;
+            width: 350px;
+            align-items: center;
+            gap: 10px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: $white-color;
+            input{
+                display: none;
+            }
+            span{
+                width: 20px;
+                height: 20px;
+                border: 1px solid #EEF3F3;
+                display: inline-block;
+                position: relative;
+                background-color: transparent;
+                cursor: pointer;
+            }
+            [type=checkbox]:checked + span:before {/* <-- ставим иконку, когда чекбокс включен  */
+                content: '\2714';
+                position: absolute;
+                width: 14px;
+                height: 10px;
+                top: -3px;
+                right: 1px;
+                color: $green-color;
+            }
+            a{
+                color: $green-color;
+            }
+        }
+    }
+
+}

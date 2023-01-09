@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Inter", sans-serif;
   margin: 0;
@@ -639,6 +640,121 @@
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+.contacts {
+  padding-top: 124px;
+}
+.contacts__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  color: #EEF3F3;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 44px;
+}
+.contacts__btn {
+  margin-top: 65px;
+  padding: 16px 36px;
+  width: 270px;
+  height: 56px;
+  text-align: center;
+  background: #6F39A4;
+  border: 2px solid #6F39A4;
+  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #EEF3F3;
+  transition: 0.5s all;
+  padding: 16px 30px;
+  width: 182px;
+  height: 56px;
+  margin-top: 10px;
+}
+.contacts__btn:hover {
+  background: #8B4EC8;
+  border: 2px solid #8B4EC8;
+}
+.contacts__btn:active {
+  background: #8B4EC8;
+  border: none;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.contacts form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+}
+.contacts form input:not(#agreement) {
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #EEF3F3;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #EEF3F3;
+  padding: 4px 0;
+  margin-top: 12px;
+}
+.contacts form input:not(#agreement):hover {
+  border-bottom: 1px solid #2CBF96;
+}
+.contacts form label:not(.contacts__agreement-label) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.contacts form label:not(.contacts__agreement-label) span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #EEF3F3;
+}
+.contacts form label:not(.contacts__agreement-label) .input-without_error {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+}
+.contacts form .contacts__agreement-label {
+  display: flex;
+  width: 350px;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #EEF3F3;
+}
+.contacts form .contacts__agreement-label input {
+  display: none;
+}
+.contacts form .contacts__agreement-label span {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #EEF3F3;
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+}
+.contacts form .contacts__agreement-label [type=checkbox]:checked + span:before { /* <-- ставим иконку, когда чекбокс включен  */
+  content: "✔";
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  top: -3px;
+  right: 1px;
+  color: #2CBF96;
+}
+.contacts form .contacts__agreement-label a {
+  color: #2CBF96;
+}
+
 @media (max-width: 1200px) {
   .promo {
     background-position-x: 32%;

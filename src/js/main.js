@@ -6,6 +6,7 @@ import moreInform from "./modules/moreInform";
 import slider from "./modules/slider";
 import slider_more from "./modules/slider_more";
 import downloadPDF from "./modules/downloadPDF";
+import form from "./modules/form";
 
 document.body.onload = function () {
     setTimeout(() => {
@@ -65,6 +66,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     try {
         downloadPDF();
+    } catch (e) {
+        console.log("Something wrong in downloadPDF module. " + e);
+    }
+
+    try {
+        form();
     } catch (e) {
         console.log("Something wrong in downloadPDF module. " + e);
     }
