@@ -357,7 +357,7 @@
   overflow: hidden;
 }
 .slider__slides {
-  transition: 1.2s ease-out;
+  transition: 1.7s ease-out;
   display: flex;
 }
 .slider__item {

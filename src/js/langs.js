@@ -75,47 +75,59 @@ const allLangs = {
     "slider__item_slide-1 .slider__item-app": {
         "ua": "<span>ЗАСТОСУВАННЯ</span> <br> Генерація електроенергії за рахунок перетворення кінетичної енергії в електричну."
     },
-    "slider__item_slide-1 .slider__item-more":{
-        "ua":"Більше..."
+    "slider__item_slide-1 .slider__item-more": {
+        "ua": "Більше..."
     },
     //SLIDE 2
-    // "slider__item_slide-2":{
-    //
-    // }
+    "slider__item_slide-2 .slider__item-title": {
+        "ua": "HHelper"
+    },
+    "slider__item_slide-2 .slider__item-subtitle": {
+        "ua": "Health Helper - пристрій для діагностики судинної системи "
+    },
+    "slider__item_slide-2 .slider__item-text": {
+        "ua": "Цей продукт є нашим рішення для вимірювання швидкості крові в судинах, проходив клінічні випробування частково використовувався в лікарській практиці і має високі показники точності як в швидкості крові так і в її похідних - таких як верхній/нижній артеріальний тиск, пульс."
+    },
+    "slider__item_slide-2 .slider__item-app": {
+        "ua": "<span>ЗАСТОСУВАННЯ</span> <br> Пристрій має доведену ефективність в клінічній діагностиці тромбозу в початкових стадіях, і деяких інших специфічних хворобах при вагітності на етапі ранньої діагностики."
+    },
+    "slider__item_slide-2 .slider__item-more": {
+        "ua": "Більше..."
+    },
 
 
     /// TEAM ///
 
-    "team .team__title":{
-        "ua":"Команда"
+    "team .team__title": {
+        "ua": "Команда"
     },
     //First
-    "team__card-item-1 .team__card-item_desc":{
-        "ua":"Найкраща у стратегії та антикризового менеджменту, фінансів, інвестицій, аналітики"
+    "team__card-item-1 .team__card-item_desc": {
+        "ua": "Найкраща у стратегії та антикризового менеджменту, фінансів, інвестицій, аналітики"
     },
-    "team__card-item-1 .team__card-item_subtitle":{
-        "ua":"Сергієнко Олена"
+    "team__card-item-1 .team__card-item_subtitle": {
+        "ua": "Сергієнко Олена"
     },
     //Second
-    "team__card-item-2 .team__card-item_desc":{
-        "ua":"Кращій у R&D, інформаційних технологіях, безпеці"
+    "team__card-item-2 .team__card-item_desc": {
+        "ua": "Кращій у R&D, інформаційних технологіях, безпеці"
     },
-    "team__card-item-2 .team__card-item_subtitle":{
-        "ua":"Соснов Ігор"
+    "team__card-item-2 .team__card-item_subtitle": {
+        "ua": "Соснов Ігор"
     },
     //Third
-    "team__card-item-3 .team__card-item_desc":{
-        "ua":"Найкращій у вирішенні повсякденних завдань і моніторингу процесу, управління фінансами проектів"
+    "team__card-item-3 .team__card-item_desc": {
+        "ua": "Найкращій у вирішенні повсякденних завдань і моніторингу процесу, управління фінансами проектів"
     },
-    "team__card-item-3 .team__card-item_subtitle":{
-        "ua":"Самусь Павло"
+    "team__card-item-3 .team__card-item_subtitle": {
+        "ua": "Самусь Павло"
     },
     //Fourth
-    "team__card-item-4 .team__card-item_desc":{
-        "ua":"Найкращій у маркетингу, продажах, комерції, співпраці та нетворкінгу"
+    "team__card-item-4 .team__card-item_desc": {
+        "ua": "Найкращій у маркетингу, продажах, комерції, співпраці та нетворкінгу"
     },
-    "team__card-item-4 .team__card-item_subtitle":{
-        "ua":"Застьола Євген"
+    "team__card-item-4 .team__card-item_subtitle": {
+        "ua": "Застьола Євген"
     },
 
 }
