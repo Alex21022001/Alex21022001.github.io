@@ -12,9 +12,11 @@ const form = () => {
         item.addEventListener("submit", (e) => {
             e.preventDefault();
             const state = [name, email, phone, checked];
+            let success = true;
 
             state.forEach(({name, checked}) => {
                 if (checked === false) {
+                    success = false;
                     const errorBlock = item.querySelector(`label > [name='${name}'] ~ .input-error`);
 
                     if (errorBlock) {
@@ -25,15 +27,36 @@ const form = () => {
                     }
                 }
             });
+            if (success) {
+                const data = new FormData(item);
+                post("mailer/smart.php", data)
+                    .then(res => console.log(res));
+            }
         });
 
         validate(item);
     });
 
+    const post = async (url, data) => {
+        const result = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!result.ok) {
+            throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
+        }
+
+        return await result.json();
+    }
+
     function validate(item) {
         const inputs = item.querySelectorAll("input:not(#agreement,[name='phone'])"),
             checkbox = item.querySelector("#agreement"),
-            phoneElement = item.querySelector("[type='tel']");
+            phoneElement = item.querySelector("[name='phone']");
 
 
         inputs.forEach(validateNameAndEmail);
@@ -86,7 +109,7 @@ const form = () => {
 
             parent.querySelector(".input-error")
                 .style.display = "none";
-        })
+        });
     }
 }
 
