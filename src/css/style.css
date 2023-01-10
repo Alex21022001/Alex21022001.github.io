@@ -714,13 +714,14 @@
   line-height: 150%;
   color: #EEF3F3;
 }
-.contacts form label:not(.contacts__agreement-label) .input-without_error {
+.contacts form label:not(.contacts__agreement-label) .input-error {
   display: none;
   position: absolute;
   right: 0;
   bottom: 7px;
 }
 .contacts form .contacts__agreement-label {
+  position: relative;
   display: flex;
   width: 350px;
   align-items: center;
@@ -753,6 +754,18 @@
 }
 .contacts form .contacts__agreement-label a {
   color: #2CBF96;
+}
+.contacts form .contacts__agreement-label .input-error {
+  display: none;
+  position: absolute;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #FC323E;
+  bottom: -43px;
+}
+.contacts form .contacts__agreement-label .input-error_active ~ div > .contacts__agreement_link {
+  color: #FC323E;
 }
 
 @media (max-width: 1200px) {

@@ -51,7 +51,7 @@
                 line-height: 150%;
                 color: $white-color;
             }
-            .input-without_error{
+            .input-error{
                 display: none;
                 position: absolute;
                 right: 0;
@@ -61,6 +61,7 @@
 
 
         .contacts__agreement-label{
+            position: relative;
             display: flex;
             width: 350px;
             align-items: center;
@@ -92,6 +93,18 @@
             }
             a{
                 color: $green-color;
+            }
+            .input-error{
+                display: none;
+                position: absolute;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 150%;
+                color: #FC323E;
+                bottom: -43px;
+            }
+            .input-error_active ~ div > .contacts__agreement_link{
+                color: #FC323E;
             }
         }
     }

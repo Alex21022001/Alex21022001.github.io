@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/modules/adaptation.js":
@@ -8,6 +7,7 @@
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -38,6 +38,7 @@ const adaptation = () => {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -112,6 +113,7 @@ const animation = (font, background, color, speed) => {
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -134,67 +136,126 @@ const downloadPDF = () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/form.js":
-/*!********************************!*\
-  !*** ./src/js/modules/form.js ***!
-  \********************************/
+/***/ "./src/js/modules/form/form.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/form/form.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vanilla-masker.min */ "./src/js/modules/form/vanilla-masker.min.js");
+/* harmony import */ var _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0__);
+
+
 const form = () => {
     const forms = document.querySelectorAll("form");
 
-    let name = false,
-        email = false,
-        phone = true,
-        checked = false;
+    const name = {name: "name", checked: false},
+        email = {name: "email", checked: false},
+        phone = {name: "phone", checked: false},
+        checked = {name: "agreement", checked: false};
 
     forms.forEach(item => {
         item.addEventListener("submit", (e) => {
             e.preventDefault();
+            const state = [name, email, phone, checked];
 
-            if (name && email && checked && phone) {
-                console.log("Success");
-            } else {
-                console.log("Error");
-            }
+            state.forEach(({name, checked}) => {
+                if (checked === false) {
+                    const errorBlock = item.querySelector(`label > [name='${name}'] ~ .input-error`);
+
+                    if (errorBlock) {
+                        if (name === "agreement") {
+                            errorBlock.classList.add("input-error_active");
+                        }
+                        errorBlock.style.display = "block";
+                    }
+                }
+            });
         });
 
-        const inputs = item.querySelectorAll("input:not(#agreement,[name='phone'])"),
-            checkbox = item.querySelector("#agreement");
-
-        checkbox.addEventListener("change", (e) => {
-            checked = e.target.checked;
-        });
-
-        inputs.forEach(validateInput);
+        validate(item);
     });
 
+    function validate(item) {
+        const inputs = item.querySelectorAll("input:not(#agreement,[name='phone'])"),
+            checkbox = item.querySelector("#agreement"),
+            phoneElement = item.querySelector("[type='tel']");
 
-    function validateInput(input) {
 
+        inputs.forEach(validateNameAndEmail);
+        validateCheckbox(checkbox);
+        validatePhone(phoneElement);
+    }
+
+
+    function validateNameAndEmail(input) {
         input.addEventListener("input", (e) => {
             const target = e.target;
+            const parent = target.parentElement;
 
             if (target.value.length > 21)
                 target.value = target.value.substring(0, 21);
 
             if (target.getAttribute("name") === "email") {
-                email = target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi) ? true : false;
+                email.checked = target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi) ? true : false;
             }
 
-            if (target.getAttribute("name") === "full-name") {
-                name = target.value.length > 3;
+            if (target.getAttribute("name") === "name") {
+                name.checked = target.value.length > 3;
+            }
+
+            parent.querySelector(".input-error").style.display = "none";
+        });
+    }
+
+    function validateCheckbox(checkbox) {
+        checkbox.addEventListener("change", (e) => {
+            const parent = e.target.parentElement;
+
+            checked.checked = e.target.checked;
+
+            if (checked.checked === true) {
+                const error = parent.querySelector(".input-error");
+                error.style.display = "none";
+                error.classList.remove("input-error_active");
             }
         });
     }
 
+    function validatePhone(phoneElement) {
+        _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0___default()(phoneElement).maskPattern("+999 999-999-999");
+
+        phoneElement.addEventListener("input", (e) => {
+            const parent = phoneElement.parentElement;
+
+            phone.checked = phoneElement.value.length > 9;
+
+            parent.querySelector(".input-error")
+                .style.display = "none";
+        })
+    }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (form);
+
+/***/ }),
+
+/***/ "./src/js/modules/form/vanilla-masker.min.js":
+/*!***************************************************!*\
+  !*** ./src/js/modules/form/vanilla-masker.min.js ***!
+  \***************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(a,b){ true?!(__WEBPACK_AMD_DEFINE_FACTORY__ = (b),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+		__WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0}(this,function(){var a=[9,16,17,18,36,37,38,39,40,91,92,93],b=function(b){for(var c=0,d=a.length;c<d;c++)if(b==a[c])return!1;return!0},c=function(a){return a=a||{},a={delimiter:a.delimiter||".",lastOutput:a.lastOutput,precision:a.hasOwnProperty("precision")?a.precision:2,separator:a.separator||",",showSignal:a.showSignal,suffixUnit:a.suffixUnit&&" "+a.suffixUnit.replace(/[\s]/g,"")||"",unit:a.unit&&a.unit.replace(/[\s]/g,"")+" "||"",zeroCents:a.zeroCents},a.moneyPrecision=a.zeroCents?0:a.precision,a},d=function(a,b,c){for(;b<a.length;b++)"9"!==a[b]&&"A"!==a[b]&&"S"!==a[b]||(a[b]=c);return a},e=function(a){this.elements=a};e.prototype.unbindElementToMask=function(){for(var a=0,b=this.elements.length;a<b;a++)this.elements[a].lastOutput="",this.elements[a].onkeyup=!1,this.elements[a].onkeydown=!1,this.elements[a].value.length&&(this.elements[a].value=this.elements[a].value.replace(/\D/g,""))},e.prototype.bindElementToMask=function(a){for(var c=this,d=function(d){d=d||window.event;var e=d.target||d.srcElement;b(d.keyCode)&&setTimeout(function(){c.opts.lastOutput=e.lastOutput,e.value=f[a](e.value,c.opts),e.lastOutput=e.value,e.setSelectionRange&&c.opts.suffixUnit&&e.setSelectionRange(e.value.length,e.value.length-c.opts.suffixUnit.length)},0)},e=0,g=this.elements.length;e<g;e++)this.elements[e].lastOutput="",this.elements[e].onkeyup=d,this.elements[e].value.length&&(this.elements[e].value=f[a](this.elements[e].value,this.opts))},e.prototype.maskMoney=function(a){this.opts=c(a),this.bindElementToMask("toMoney")},e.prototype.maskNumber=function(){this.opts={},this.bindElementToMask("toNumber")},e.prototype.maskAlphaNum=function(){this.opts={},this.bindElementToMask("toAlphaNumeric")},e.prototype.maskPattern=function(a){this.opts={pattern:a},this.bindElementToMask("toPattern")},e.prototype.unMask=function(){this.unbindElementToMask()};var f=function(a){if(!a)throw new Error("VanillaMasker: There is no element to bind.");var b="length"in a?a.length?a:[]:[a];return new e(b)};return f.toMoney=function(a,b){if(b=c(b),b.zeroCents){b.lastOutput=b.lastOutput||"";var d="("+b.separator+"[0]{0,"+b.precision+"})",e=new RegExp(d,"g"),f=a.toString().replace(/[\D]/g,"").length||0,g=b.lastOutput.toString().replace(/[\D]/g,"").length||0;a=a.toString().replace(e,""),f<g&&(a=a.slice(0,a.length-1))}var h=a.toString().replace(/[\D]/g,""),i=new RegExp("^(0|\\"+b.delimiter+")"),j=new RegExp("(\\"+b.separator+")$"),k=h.substr(0,h.length-b.moneyPrecision),l=k.substr(0,k.length%3),m=new Array(b.precision+1).join("0");k=k.substr(k.length%3,k.length);for(var n=0,o=k.length;n<o;n++)n%3==0&&(l+=b.delimiter),l+=k[n];l=l.replace(i,""),l=l.length?l:"0";var p="";if(!0===b.showSignal&&(p=a<0||a.startsWith&&a.startsWith("-")?"-":""),!b.zeroCents){var q=h.length-b.precision,r=h.substr(q,b.precision),s=r.length;m=(m+r).slice(-(b.precision>s?b.precision:s))}return(b.unit+p+l+b.separator+m).replace(j,"")+b.suffixUnit},f.toPattern=function(a,b){var c,e="object"==typeof b?b.pattern:b,f=e.replace(/\W/g,""),g=e.split(""),h=a.toString().replace(/\W/g,""),i=h.replace(/\W/g,""),j=0,k=g.length,l="object"==typeof b?b.placeholder:void 0;for(c=0;c<k;c++){if(j>=h.length){if(f.length==i.length)return g.join("");if(void 0!==l&&f.length>i.length)return d(g,c,l).join("");break}if("9"===g[c]&&h[j].match(/[0-9]/)||"A"===g[c]&&h[j].match(/[a-zA-Z]/)||"S"===g[c]&&h[j].match(/[0-9a-zA-Z]/))g[c]=h[j++];else if("9"===g[c]||"A"===g[c]||"S"===g[c])return void 0!==l?d(g,c,l).join(""):g.slice(0,c).join("")}return g.join("").substr(0,c)},f.toNumber=function(a){return a.toString().replace(/(?!^-)[^0-9]/g,"")},f.toAlphaNumeric=function(a){return a.toString().replace(/[^a-z0-9 ]+/i,"")},f});
 
 /***/ }),
 
@@ -204,6 +265,7 @@ const form = () => {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -271,6 +333,7 @@ const hamburger = () => {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -344,6 +407,7 @@ const languages = () => {
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -408,12 +472,13 @@ const moreInform = () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/slider.js":
-/*!**********************************!*\
-  !*** ./src/js/modules/slider.js ***!
-  \**********************************/
+/***/ "./src/js/modules/slider/slider.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/slider/slider.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -593,12 +658,13 @@ const slider = () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/slider_more.js":
-/*!***************************************!*\
-  !*** ./src/js/modules/slider_more.js ***!
-  \***************************************/
+/***/ "./src/js/modules/slider/slider_more.js":
+/*!**********************************************!*\
+  !*** ./src/js/modules/slider/slider_more.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -656,13 +722,25 @@ const hideSlideDesc=()=>{
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -693,8 +771,9 @@ const hideSlideDesc=()=>{
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
@@ -704,10 +783,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_languages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/languages */ "./src/js/modules/languages.js");
 /* harmony import */ var _modules_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/animation */ "./src/js/modules/animation.js");
 /* harmony import */ var _modules_moreInform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/moreInform */ "./src/js/modules/moreInform.js");
-/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
-/* harmony import */ var _modules_slider_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider_more */ "./src/js/modules/slider_more.js");
+/* harmony import */ var _modules_slider_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider/slider */ "./src/js/modules/slider/slider.js");
+/* harmony import */ var _modules_slider_slider_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider/slider_more */ "./src/js/modules/slider/slider_more.js");
 /* harmony import */ var _modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/downloadPDF */ "./src/js/modules/downloadPDF.js");
-/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/form/form */ "./src/js/modules/form/form.js");
 
 
 
@@ -763,13 +842,13 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-        (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
+        (0,_modules_slider_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
     } catch (e) {
         console.log("Something wrong in slider module. " + e);
     }
 
     try {
-        (0,_modules_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
+        (0,_modules_slider_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
     } catch (e) {
         console.log("Something wrong in slider_more module. " + e);
     }
@@ -781,9 +860,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-        (0,_modules_form__WEBPACK_IMPORTED_MODULE_8__["default"])();
+        (0,_modules_form_form__WEBPACK_IMPORTED_MODULE_8__["default"])();
     } catch (e) {
-        console.log("Something wrong in downloadPDF module. " + e);
+        console.log("Something wrong in form module. " + e);
     }
 
 

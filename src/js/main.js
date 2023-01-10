@@ -3,10 +3,10 @@ import adaptation from "./modules/adaptation";
 import languages from "./modules/languages";
 import animation from "./modules/animation";
 import moreInform from "./modules/moreInform";
-import slider from "./modules/slider";
-import slider_more from "./modules/slider_more";
+import slider from "./modules/slider/slider";
+import slider_more from "./modules/slider/slider_more";
 import downloadPDF from "./modules/downloadPDF";
-import form from "./modules/form";
+import form from "./modules/form/form";
 
 document.body.onload = function () {
     setTimeout(() => {
@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
     try {
         form();
     } catch (e) {
-        console.log("Something wrong in downloadPDF module. " + e);
+        console.log("Something wrong in form module. " + e);
     }
 
 

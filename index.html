@@ -278,7 +278,7 @@
                                             </div>
                                         </div>
                                         <div class="slider__item-btns">
-                                            <a href="#">Download .PDF</a>
+                                            <a target="_blank" data-pdf-btn="true" href="src/docs/HHelper_EN.pdf">Download .PDF</a>
                                             <button class="slider__item-btn" data-form-btn="true">Contact Us</button>
                                         </div>
                                         <button class="slider__item-more">More Information</button>
@@ -485,8 +485,8 @@
                 <form class="contacts__form col-md-4">
                     <label>
                         <span>Full name</span>
-                        <input name="full-name" placeholder="Write your full name" type="text">
-                        <div class="input-without_error">
+                        <input name="name" placeholder="Write your full name" type="text">
+                        <div class="input-error">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.916504 20.1667L10.9998 2.75L21.0832 20.1667H0.916504Z" stroke="#FC323E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="bevel"/>
                                 <path d="M11 10.0833V13.75" stroke="#FC323E" stroke-width="1.5" stroke-linecap="square"/>
@@ -497,7 +497,7 @@
                     <label>
                         <span>E-mail</span>
                         <input name="email" placeholder="Write your E-mail" type="text">
-                        <div class="input-without_error">
+                        <div class="input-error">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.916504 20.1667L10.9998 2.75L21.0832 20.1667H0.916504Z" stroke="#FC323E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="bevel"/>
                                 <path d="M11 10.0833V13.75" stroke="#FC323E" stroke-width="1.5" stroke-linecap="square"/>
@@ -507,8 +507,8 @@
                     </label>
                     <label>
                         <span>Phone</span>
-                        <input name="phone" placeholder="Write your phone number" type="text">
-                        <div class="input-without_error">
+                        <input name="phone" placeholder="Write your phone number" type="tel">
+                        <div class="input-error">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.916504 20.1667L10.9998 2.75L21.0832 20.1667H0.916504Z" stroke="#FC323E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="bevel"/>
                                 <path d="M11 10.0833V13.75" stroke="#FC323E" stroke-width="1.5" stroke-linecap="square"/>
@@ -520,6 +520,9 @@
                     <label class="contacts__agreement-label" for="agreement">
                         <input id="agreement" name="agreement" type="checkbox">
                         <span></span>
+                        <div class="input-error">
+                            Please note that to confirm the order, you must agree to the terms of service.
+                        </div>
                         <div>I accept the <a class="contacts__agreement_link" href="#">terms of cooperation</a></div>
                     </label>
 
