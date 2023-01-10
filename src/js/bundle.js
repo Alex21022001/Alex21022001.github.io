@@ -180,7 +180,7 @@ const form = () => {
             });
             if (success) {
                 const data = new FormData(item);
-                post("mailer/smart.php", data)
+                post("src/mailer/smart.php", data)
                     .then(res => console.log(res));
             }
         });
