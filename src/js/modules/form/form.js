@@ -30,7 +30,11 @@ const form = () => {
             if (success) {
                 const data = new FormData(item);
                 post("src/mailer/smart.php", data)
-                    .then(res => console.log(res));
+                    .then(res => {
+                        console.log(res)
+                        console.log(res.ok)
+                        console.log(res.status);
+                    });
             }
         });
 
@@ -38,7 +42,7 @@ const form = () => {
     });
 
     const post = async (url, data) => {
-        const result = await fetch(url, {
+        return await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,11 +50,11 @@ const form = () => {
             body: JSON.stringify(data)
         });
 
-        if (!result.ok) {
-            throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
-        }
-
-        return await result.json();
+        // if (!result.ok) {
+        //     throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
+        // }
+        //
+        // return await result.json();
     }
 
     function validate(item) {
