@@ -29,12 +29,17 @@ const form = () => {
             });
             if (success) {
                 const data = new FormData(item);
-                post("src/mailer/smart.php", data)
+                console.log({name: data.get("name"), phone: data.get("phone"), email: data.get("email")});
+                post("src/sendMail.php", data)
                     .then(res => {
-                        console.log(res)
-                        console.log(res.ok)
-                        console.log(res.status);
-                    });
+                        if (!res.ok) {
+                            console.log(res.status);
+                            console.log(res.body);
+                            throw new Error("fetch is wrong");
+                        }
+                        return res.json();
+                    }).then(res => console.log(res))
+                    .catch(res => console.log(res));
             }
         });
 
@@ -47,7 +52,7 @@ const form = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({name: data.get("name"), phone: data.get("phone"), email: data.get("email")})
         });
 
         // if (!result.ok) {
