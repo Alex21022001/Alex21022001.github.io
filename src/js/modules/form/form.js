@@ -9,6 +9,7 @@ const form = () => {
         checked = {name: "agreement", checked: false};
 
     forms.forEach(item => {
+
         item.addEventListener("submit", (e) => {
             e.preventDefault();
             const state = [name, email, phone, checked];
@@ -27,27 +28,33 @@ const form = () => {
                     }
                 }
             });
+
             if (success) {
                 const data = new FormData(item);
-                console.log({name: data.get("name"), phone: data.get("phone"), email: data.get("email")});
+                const loading = new Loading(item);
+
+                loading.showLoading();
+
                 post("src/sendMail.php", data)
-                    .then(res => {
-                        if (!res.ok) {
-                            console.log(res.status);
-                            console.log(res.body);
-                            throw new Error("fetch is wrong");
-                        }
-                        return res.json();
-                    }).then(res => console.log(res))
-                    .catch(res => console.log(res));
+                    .then(() => {
+                        alert("Success");
+                        item.reset();
+                    })
+                    .catch(() => {
+                        alert("Error");
+                        throw new Error("We can't send your data");
+                    }).finally(() => {
+                    loading.hideLoading();
+                });
             }
         });
 
         validate(item);
     });
 
+
     const post = async (url, data) => {
-        return await fetch(url, {
+        const result = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -55,11 +62,11 @@ const form = () => {
             body: JSON.stringify({name: data.get("name"), phone: data.get("phone"), email: data.get("email")})
         });
 
-        // if (!result.ok) {
-        //     throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
-        // }
-        //
-        // return await result.json();
+        if (!result.ok) {
+            throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
+        }
+
+        return await result.json();
     }
 
     function validate(item) {
@@ -79,7 +86,7 @@ const form = () => {
             const target = e.target;
             const parent = target.parentElement;
 
-            if (target.value.length > 21)
+            if (target.value.length > 33)
                 target.value = target.value.substring(0, 21);
 
             if (target.getAttribute("name") === "email") {
@@ -120,6 +127,24 @@ const form = () => {
                 .style.display = "none";
         });
     }
+}
+
+class Loading {
+    constructor(form) {
+        this.btn = form.querySelector("[type='submit']");
+        this.btnCopy = this.btn.cloneNode(true);
+    }
+
+    showLoading() {
+        this.btn.innerHTML = "<div class='load'></div>";
+        this.btn.disabled = true;
+    }
+
+    hideLoading() {
+        this.btn.innerHTML = this.btnCopy.innerHTML;
+        this.btn.disabled = false;
+    }
+
 }
 
 export default form;
