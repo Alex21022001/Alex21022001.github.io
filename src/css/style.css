@@ -643,6 +643,10 @@
 .contacts {
   padding-top: 124px;
 }
+.contacts .row {
+  display: flex;
+  align-items: center;
+}
 .contacts__map img {
   width: 100%;
   height: 100%;
@@ -853,6 +857,9 @@ label > input:has(~ div.input-error_active) {
   }
   .projects .slider__item-btns {
     position: unset;
+  }
+  .contacts .row {
+    align-items: flex-start;
   }
 }
 @media (max-width: 991px) {

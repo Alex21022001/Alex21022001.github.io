@@ -1,6 +1,10 @@
 .contacts {
     padding-top: 124px;
 
+    .row{
+        display: flex;
+        align-items: center;
+    }
 
     &__map{
         img{

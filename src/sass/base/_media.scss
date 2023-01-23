@@ -29,6 +29,12 @@
         }
     }
 
+    .contacts{
+        .row{
+            align-items: flex-start;
+        }
+    }
+
 }
 
 @media (max-width: 991px) {
