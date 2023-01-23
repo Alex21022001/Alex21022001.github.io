@@ -1,6 +1,15 @@
 .contacts {
     padding-top: 124px;
 
+
+    &__map{
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
     &__title {
         font-weight: 700;
         font-size: 36px;
@@ -70,7 +79,6 @@
         .contacts__agreement-label {
             position: relative;
             display: flex;
-            width: 350px;
             align-items: center;
             gap: 10px;
             font-weight: 400;

@@ -28,6 +28,8 @@ const languages = () => {
                     item.innerHTML = allLangs[key][lang];
                 });
             }
+
+            translateForms()
         }
     }
 
@@ -55,6 +57,24 @@ const languages = () => {
 
     getLang();
 
+}
+
+function translateForms() {
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach(form => {
+        form.querySelector("[name='name']").setAttribute("placeholder", "Вкажіть ваше ім'я");
+        form.querySelector("[name='email']").setAttribute("placeholder", "Вкажіть ваш Email");
+        form.querySelector("[name='phone']").setAttribute("placeholder", "Вкажіть ваш телефон");
+
+        form.querySelector(".full-name").textContent = "Ваше повне ім'я";
+        form.querySelector(".email").textContent = "Ваш Email";
+        form.querySelector(".phone").textContent = "Ваш номер телефону";
+
+        form.querySelector(".accept_agreement").innerHTML = "Я приймаю <a class=\"contacts__agreement_link\" href=\"#\">ці умови</a>"
+        form.querySelector(".contacts__agreement-label > .input-error").textContent = "Для відправки Ви повинні погодитися з нашою політикою"
+        form.querySelector(".contacts__agreement-label > .input-error").style.bottom = "-25px";
+    });
 }
 
 export default languages;

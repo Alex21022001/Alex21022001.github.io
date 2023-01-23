@@ -130,4 +130,10 @@ const allLangs = {
         "ua": "Застьола Євген"
     },
 
+
+    // Contacts //
+    "contacts .contacts__title" : {
+        "ua":"Контакти"
+    },
+
 }
