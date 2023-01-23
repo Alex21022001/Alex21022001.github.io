@@ -177,6 +177,7 @@
             flex-direction: column;
         }
         &__map{
+
             padding-right: calc(var(--bs-gutter-x) * .5);
             img{
                 object-fit: cover;
