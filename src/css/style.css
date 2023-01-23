@@ -743,7 +743,7 @@
   background-color: transparent;
   cursor: pointer;
 }
-.contacts form .contacts__agreement-label [type=checkbox]:checked + span:before { /* <-- ставим иконку, когда чекбокс включен  */
+.contacts form .contacts__agreement-label [type=checkbox]:checked + span:before {
   content: "✔";
   position: absolute;
   width: 14px;
@@ -766,6 +766,10 @@
 }
 .contacts form .contacts__agreement-label .input-error_active ~ div > .contacts__agreement_link {
   color: #FC323E;
+}
+
+label > input:has(~ div.input-error_active) {
+  border-bottom: 1px solid #FC323E !important;
 }
 
 .load {

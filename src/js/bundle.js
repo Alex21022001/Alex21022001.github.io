@@ -136,10 +136,10 @@ const downloadPDF = () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/form/form.js":
-/*!*************************************!*\
-  !*** ./src/js/modules/form/form.js ***!
-  \*************************************/
+/***/ "./src/js/modules/form/Loading.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/form/Loading.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -147,139 +147,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vanilla-masker.min */ "./src/js/modules/form/vanilla-masker.min.js");
-/* harmony import */ var _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0__);
-
-
-const form = () => {
-    const forms = document.querySelectorAll("form");
-
-    const name = {name: "name", checked: false},
-        email = {name: "email", checked: false},
-        phone = {name: "phone", checked: false},
-        checked = {name: "agreement", checked: false};
-
-    forms.forEach(item => {
-
-        item.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const state = [name, email, phone, checked];
-            let success = true;
-
-            state.forEach(({name, checked}) => {
-                if (checked === false) {
-                    success = false;
-                    const errorBlock = item.querySelector(`label > [name='${name}'] ~ .input-error`);
-
-                    if (errorBlock) {
-                        if (name === "agreement") {
-                            errorBlock.classList.add("input-error_active");
-                        }
-                        errorBlock.style.display = "block";
-                    }
-                }
-            });
-
-            if (success) {
-                const data = new FormData(item);
-                const loading = new Loading(item);
-
-                loading.showLoading();
-
-                post("src/sendMail.php", data)
-                    .then(() => {
-                        alert("Success");
-                        item.reset();
-                    })
-                    .catch(() => {
-                        alert("Error");
-                        throw new Error("We can't send your data");
-                    }).finally(() => {
-                    loading.hideLoading();
-                });
-            }
-        });
-
-        validate(item);
-    });
-
-
-    const post = async (url, data) => {
-        const result = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({name: data.get("name"), phone: data.get("phone"), email: data.get("email")})
-        });
-
-        if (!result.ok) {
-            throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
-        }
-
-        return await result.json();
-    }
-
-    function validate(item) {
-        const inputs = item.querySelectorAll("input:not(#agreement,[name='phone'])"),
-            checkbox = item.querySelector("#agreement"),
-            phoneElement = item.querySelector("[name='phone']");
-
-
-        inputs.forEach(validateNameAndEmail);
-        validateCheckbox(checkbox);
-        validatePhone(phoneElement);
-    }
-
-
-    function validateNameAndEmail(input) {
-        input.addEventListener("input", (e) => {
-            const target = e.target;
-            const parent = target.parentElement;
-
-            if (target.value.length > 33)
-                target.value = target.value.substring(0, 21);
-
-            if (target.getAttribute("name") === "email") {
-                email.checked = target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi) ? true : false;
-            }
-
-            if (target.getAttribute("name") === "name") {
-                name.checked = target.value.length > 3;
-            }
-
-            parent.querySelector(".input-error").style.display = "none";
-        });
-    }
-
-    function validateCheckbox(checkbox) {
-        checkbox.addEventListener("change", (e) => {
-            const parent = e.target.parentElement;
-
-            checked.checked = e.target.checked;
-
-            if (checked.checked === true) {
-                const error = parent.querySelector(".input-error");
-                error.style.display = "none";
-                error.classList.remove("input-error_active");
-            }
-        });
-    }
-
-    function validatePhone(phoneElement) {
-        _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0___default()(phoneElement).maskPattern("+999 999-999-999");
-
-        phoneElement.addEventListener("input", (e) => {
-            const parent = phoneElement.parentElement;
-
-            phone.checked = phoneElement.value.length > 9;
-
-            parent.querySelector(".input-error")
-                .style.display = "none";
-        });
-    }
-}
-
 class Loading {
     constructor(form) {
         this.btn = form.querySelector("[type='submit']");
@@ -297,8 +164,209 @@ class Loading {
     }
 
 }
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Loading);
+
+/***/ }),
+
+/***/ "./src/js/modules/form/form.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/form/form.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Loading */ "./src/js/modules/form/Loading.js");
+/* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service */ "./src/js/modules/form/service.js");
+/* harmony import */ var _validation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./validation */ "./src/js/modules/form/validation.js");
+
+
+
+
+const form = () => {
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach(item => {
+        const name = {name: "name", checked: false},
+            email = {name: "email", checked: false},
+            phone = {name: "phone", checked: false},
+            checked = {name: "agreement", checked: false};
+        const validation = new _validation__WEBPACK_IMPORTED_MODULE_2__["default"](item, name, email, phone, checked);
+
+        validation.validate();
+        item.addEventListener("submit", (e) => finalValidation({item, e, name, email, phone, checked}));
+    });
+
+
+    function finalValidation({item, e, name, email, phone, checked}) {
+        e.preventDefault();
+        const state = [name, email, phone, checked];
+        let success = true;
+
+        state.forEach(({name, checked}) => {
+            if (checked === false) {
+                success = false;
+                const errorBlock = item.querySelector(`label > [name='${name}'] ~ .input-error`);
+
+                if (errorBlock) {
+                    errorBlock.classList.add("input-error_active");
+                    errorBlock.style.display = "block";
+                }
+            }
+        });
+
+        if (success) {
+            const data = new FormData(item);
+            const loading = new _Loading__WEBPACK_IMPORTED_MODULE_0__["default"](item);
+
+            loading.showLoading();
+
+            (0,_service__WEBPACK_IMPORTED_MODULE_1__.post)("src/sendMail.php", data)
+                .then(() => {
+                    alert("Success");
+                    item.reset();
+                })
+                .catch(() => {
+                    alert("Error");
+                    throw new Error("We can't send your data");
+                }).finally(() => {
+                loading.hideLoading();
+            });
+        }
+    }
+}
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (form);
+
+/***/ }),
+
+/***/ "./src/js/modules/form/service.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/form/service.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "post": () => (/* binding */ post)
+/* harmony export */ });
+const post = async (url, data) => {
+    const result = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name: data.get("name"), phone: data.get("phone"), email: data.get("email")})
+    });
+
+    if (!result.ok) {
+        throw new Error("We couldn't do fetch to " + url + ". The status: " + result.status);
+    }
+
+    return await result.json();
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/form/validation.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/form/validation.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vanilla-masker.min */ "./src/js/modules/form/vanilla-masker.min.js");
+/* harmony import */ var _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+class FormValidation {
+    constructor(form, name, email, phone, checked) {
+        this.form = form;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.checked = checked;
+    }
+
+
+    validate() {
+        const inputs = this.form.querySelectorAll("input:not(#agreement,[name='phone'])"),
+            checkbox = this.form.querySelector("#agreement"),
+            phoneElement = this.form.querySelector("[name='phone']");
+
+        inputs.forEach(this.validateNameAndEmail);
+        this.validateCheckbox(checkbox);
+        this.validatePhone(phoneElement);
+    }
+
+    validateNameAndEmail = (input) => {
+        input.addEventListener("input", (e) => {
+            const target = e.target;
+            const parent = target.parentElement;
+
+            if (target.value.length > 33)
+                target.value = target.value.substring(0, 31);
+
+            if (target.getAttribute("name") === "email") {
+                this.email.checked = target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/gi) ? true : false;
+            }
+
+            if (target.getAttribute("name") === "name") {
+                this.name.checked = target.value.length > 3;
+            }
+
+            const errorBlock = parent.querySelector(".input-error");
+            errorBlock.style.display = "none";
+            errorBlock.classList.remove("input-error_active");
+        });
+    }
+
+    validateCheckbox = (checkbox) => {
+        checkbox.addEventListener("change", (e) => {
+            const parent = e.target.parentElement;
+
+            this.checked.checked = e.target.checked;
+
+            if (this.checked.checked === true) {
+                const errorBlock = parent.querySelector(".input-error");
+                errorBlock.style.display = "none";
+                errorBlock.classList.remove("input-error_active");
+            }
+        });
+    }
+
+    validatePhone = (phoneElement) => {
+        _vanilla_masker_min__WEBPACK_IMPORTED_MODULE_0___default()(phoneElement).maskPattern("+999 999-999-999");
+
+        phoneElement.addEventListener("input", (e) => {
+            const parent = phoneElement.parentElement;
+
+            this.phone.checked = phoneElement.value.length > 9;
+
+            const errorBlock = parent.querySelector(".input-error");
+            errorBlock.style.display = "none";
+            errorBlock.classList.remove("input-error_active");
+        });
+    }
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormValidation);
+
+
+
+
 
 /***/ }),
 
