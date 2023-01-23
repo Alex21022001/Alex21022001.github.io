@@ -569,7 +569,7 @@ function translateForms() {
 function adaptMainTitle(){
     const title = document.querySelector(".promo__text-title");
 
-    if (window.screen.availWidth <426 && localStorage.getItem("lang") === "ua"){
+    if (window.screen.availWidth <450 && localStorage.getItem("lang") === "ua"){
         console.log(title);
         title.innerHTML = "ТОВ\"Юкрейніан Текнолоджи Трансфер Тим\" <br> (UTTT LLC)";
     }
