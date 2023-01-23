@@ -7,13 +7,13 @@ const animation = (font, background, color, speed) => {
     content.style.maxHeight = "0px";
 
     let ctx = canvas.getContext("2d"),
-        width = (canvas.width = box.clientWidth+45), //45 px = more info btn
+        width = (canvas.width = box.clientWidth + 45), //45 px = more info btn
         height = (canvas.height = h),
         str = "UTTT ".split(""),
         col = width * 0.5 / font,
         arr = [];
 
-    if (window.screen.availWidth <768){
+    if (window.screen.availWidth < 768) {
         col = width / font;
     }
 
@@ -50,12 +50,35 @@ const animation = (font, background, color, speed) => {
             arr[i]++
         }
     }
-    const id = setInterval(draw, 50);
-    if (window.screen.availWidth < 768){
 
-    }else {
+    function stopAnimationByScroll(id) {
+        const canvas = document.querySelector(".aboutUs");
+        let stop = false;
+
+        window.addEventListener("scroll", () => {
+            const rect = canvas.getBoundingClientRect();
+            if ((rect.top + rect.height) < 0) {
+                clearInterval(id);
+                stop = true;
+            }
+            if (((rect.top + rect.height) > 0) && stop) {
+                id = setInterval(draw, 50);
+                stop = false;
+            }
+        });
+    }
+
+
+    let id = setInterval(draw, 50);
+
+    if (window.screen.availWidth < 768) {
+
+    } else {
         window.addEventListener("resize", () => location.reload());
     }
+
+    stopAnimationByScroll(id);
 }
+
 
 export default animation;
