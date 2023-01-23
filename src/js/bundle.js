@@ -28,6 +28,7 @@ const adaptation = () => {
 
 }
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (adaptation);
 
 /***/ }),
@@ -494,7 +495,8 @@ const languages = () => {
                 });
             }
 
-            translateForms()
+            translateForms();
+            adaptMainTitle();
         }
     }
 
@@ -538,8 +540,16 @@ function translateForms() {
 
         form.querySelector(".accept_agreement").innerHTML = "Я приймаю <a class=\"contacts__agreement_link\" href=\"#\">ці умови</a>"
         form.querySelector(".contacts__agreement-label > .input-error").textContent = "Для відправки Ви повинні погодитися з нашою політикою"
-        form.querySelector(".contacts__agreement-label > .input-error").style.bottom = "-25px";
     });
+}
+
+function adaptMainTitle(){
+    const title = document.querySelector(".promo__text-title");
+
+    if (window.screen.availWidth <426 && localStorage.getItem("lang") === "ua"){
+        console.log(title);
+        title.innerHTML = "ТОВ\"Юкрейніан Текнолоджи Трансфер Тим\" <br> (UTTT LLC)";
+    }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (languages);

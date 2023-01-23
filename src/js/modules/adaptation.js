@@ -14,4 +14,5 @@ const adaptation = () => {
 
 }
 
+
 export default adaptation;

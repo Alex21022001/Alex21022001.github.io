@@ -961,6 +961,19 @@ label > input:has(~ div.input-error_active) {
     top: 170px;
     right: 0;
   }
+  .contacts .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .contacts__map {
+    margin-bottom: 50px;
+  }
+  .contacts__map img {
+    object-fit: cover;
+  }
+  .contacts .contacts__agreement-label > .input-error {
+    bottom: -25px !important;
+  }
 }
 @media (max-width: 767px) {
   .promo {
@@ -1020,6 +1033,9 @@ label > input:has(~ div.input-error_active) {
   }
   .team__card-wrapper {
     padding: 0;
+  }
+  .contacts__title {
+    font-size: 28px;
   }
 }
 @media (max-width: 630px) {
@@ -1122,6 +1138,20 @@ label > input:has(~ div.input-error_active) {
   }
   .team {
     padding-top: 75px;
+  }
+  .contacts {
+    padding-top: 70px;
+  }
+  .contacts__btn {
+    padding: 10px 15px;
+    width: 165px;
+    height: 45px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 535px) {
+  .contacts .contacts__agreement-label > .input-error {
+    bottom: -43px !important;
   }
 }
 @media (max-width: 424px) {
