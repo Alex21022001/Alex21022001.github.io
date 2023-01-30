@@ -29,9 +29,12 @@
         }
     }
 
-    .contacts{
-        .row{
+    .contacts {
+        .row {
             align-items: flex-start;
+        }
+        .contacts__agreement-label{
+            gap: 15px !important;
         }
     }
 
@@ -43,6 +46,7 @@
     }
     .projects {
         min-height: 600px;
+
         .row {
             position: relative;
         }
@@ -171,22 +175,28 @@
     }
 
 
-    .contacts{
-        .row{
+    .contacts {
+        .row {
             display: flex;
             flex-direction: column;
         }
-        &__map{
+
+        &__map {
 
             padding-right: calc(var(--bs-gutter-x) * .5);
-            img{
+
+            img {
                 object-fit: cover;
             }
 
             margin-bottom: 50px;
         }
-        .contacts__agreement-label > .input-error{
+
+        .contacts__agreement-label > .input-error {
             bottom: -25px !important;
+        }
+        .contacts__agreement-label{
+            gap: 10px !important;
         }
 
     }
@@ -278,8 +288,8 @@
             }
         }
     }
-    .contacts{
-        &__title{
+    .contacts {
+        &__title {
             font-size: 28px;
         }
 
@@ -416,24 +426,44 @@
         }
     }
 
-    .team{
+    .team {
         padding-top: 75px;
     }
 
-    .contacts{
+    .contacts {
         padding-top: 70px;
-        &__btn{
+
+        &__btn {
             padding: 10px 15px;
             width: 165px;
             height: 45px;
             font-size: 15px;
         }
     }
+
+
+    .modal {
+        .modal-result {
+
+        }
+
+        &-inner {
+            width: 350px;
+        }
+        &-title {
+            font-size: 18px;
+        }
+        &-desc{
+            font-size: 14px;
+    }
+
+}
+
 }
 
 @media (max-width: 535px) {
-    .contacts{
-        .contacts__agreement-label > .input-error{
+    .contacts {
+        .contacts__agreement-label > .input-error {
             bottom: -43px !important;
         }
     }

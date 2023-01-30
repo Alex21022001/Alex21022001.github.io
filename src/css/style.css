@@ -75,22 +75,25 @@
   height: 56px;
   text-align: center;
   background: #6F39A4;
-  border: 2px solid #6F39A4;
-  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25);
+  border: 2px solid #6F39A4 !important;
+  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25) !important;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
-  color: #EEF3F3;
+  color: #EEF3F3 !important;
+  text-decoration: none;
   transition: 0.5s all;
 }
 .promo__btn:hover {
   background: #8B4EC8;
   border: 2px solid #8B4EC8;
+  color: #EEF3F3 !important;
 }
 .promo__btn:active {
   background: #8B4EC8;
   border: none;
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+  color: #EEF3F3 !important;
 }
 
 .en {
@@ -448,12 +451,13 @@
   height: 56px;
   text-align: center;
   background: #6F39A4;
-  border: 2px solid #6F39A4;
-  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25);
+  border: 2px solid #6F39A4 !important;
+  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25) !important;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
-  color: #EEF3F3;
+  color: #EEF3F3 !important;
+  text-decoration: none;
   transition: 0.5s all;
   margin-top: 0;
   width: 210px;
@@ -462,11 +466,13 @@
 .slider__item-btn:hover {
   background: #8B4EC8;
   border: 2px solid #8B4EC8;
+  color: #EEF3F3 !important;
 }
 .slider__item-btn:active {
   background: #8B4EC8;
   border: none;
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+  color: #EEF3F3 !important;
 }
 .slider__prev {
   display: block;
@@ -671,12 +677,13 @@
   height: 56px;
   text-align: center;
   background: #6F39A4;
-  border: 2px solid #6F39A4;
-  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25);
+  border: 2px solid #6F39A4 !important;
+  box-shadow: 0px 4px 4px rgba(25, 29, 65, 0.25) !important;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
-  color: #EEF3F3;
+  color: #EEF3F3 !important;
+  text-decoration: none;
   transition: 0.5s all;
   padding: 16px 30px;
   width: 182px;
@@ -686,11 +693,13 @@
 .contacts__btn:hover {
   background: #8B4EC8;
   border: 2px solid #8B4EC8;
+  color: #EEF3F3 !important;
 }
 .contacts__btn:active {
   background: #8B4EC8;
   border: none;
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+  color: #EEF3F3 !important;
 }
 .contacts form {
   display: flex;
@@ -936,6 +945,9 @@ label > input:has(~ div.input-error_active) {
   .contacts .row {
     align-items: flex-start;
   }
+  .contacts .contacts__agreement-label {
+    gap: 15px !important;
+  }
 }
 @media (max-width: 991px) {
   .aboutUs {
@@ -1056,6 +1068,9 @@ label > input:has(~ div.input-error_active) {
   }
   .contacts .contacts__agreement-label > .input-error {
     bottom: -25px !important;
+  }
+  .contacts .contacts__agreement-label {
+    gap: 10px !important;
   }
 }
 @media (max-width: 767px) {
@@ -1230,6 +1245,15 @@ label > input:has(~ div.input-error_active) {
     width: 165px;
     height: 45px;
     font-size: 15px;
+  }
+  .modal-inner {
+    width: 350px;
+  }
+  .modal-title {
+    font-size: 18px;
+  }
+  .modal-desc {
+    font-size: 14px;
   }
 }
 @media (max-width: 535px) {

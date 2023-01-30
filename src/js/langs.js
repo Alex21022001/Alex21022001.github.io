@@ -59,7 +59,7 @@ const allLangs = {
     "projects .projects__title": {
         "ua": "Проєкти"
     },
-    "projects .slider__item-btns a": {
+    "projects .slider__item-btns a:not([data-form-btn])": {
         "ua": "Скачати .PDF"
     },
     //SLIDE 1

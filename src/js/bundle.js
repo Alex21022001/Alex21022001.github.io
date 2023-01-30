@@ -245,7 +245,8 @@ const form = () => {
         });
 
         if (success) {
-            const data = new FormData(item);
+            const formData = new FormData(item);
+            const data = {name: formData.get("name"), phone: formData.get("phone"), email: formData.get("email")};
             const loading = new _Loading__WEBPACK_IMPORTED_MODULE_0__["default"](item);
 
             loading.showLoading();
@@ -412,7 +413,7 @@ const post = async (url, data) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: data.get("name"), phone: data.get("phone"), email: data.get("email")})
+        body: JSON.stringify(data)
     });
 
     if (!result.ok) {
@@ -689,8 +690,8 @@ function translateForms() {
         form.querySelector(".email").textContent = "Ваш Email";
         form.querySelector(".phone").textContent = "Ваш номер телефону";
 
-        form.querySelector(".accept_agreement").innerHTML = "Я приймаю <a class=\"contacts__agreement_link\" href=\"#\">ці умови</a>"
-        form.querySelector(".contacts__agreement-label > .input-error").textContent = "Для відправки Ви повинні погодитися з нашою політикою"
+        form.querySelector(".accept_agreement").innerHTML = "Я приймаю  <a class=\"contacts__agreement_link\" href=\"#\">політику конфіденційності</a>"
+        form.querySelector(".contacts__agreement-label > .input-error").textContent = "Для відправки Ви повинні погодитися з політикою конфіденційності нашого сайту."
     });
 }
 
@@ -698,7 +699,6 @@ function adaptMainTitle(){
     const title = document.querySelector(".promo__text-title");
 
     if (window.screen.availWidth <450 && localStorage.getItem("lang") === "ua"){
-        console.log(title);
         title.innerHTML = "ТОВ\"Юкрейніан Текнолоджи Трансфер Тим\" <br> (UTTT LLC)";
     }
 }

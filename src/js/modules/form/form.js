@@ -36,7 +36,8 @@ const form = () => {
         });
 
         if (success) {
-            const data = new FormData(item);
+            const formData = new FormData(item);
+            const data = {name: formData.get("name"), phone: formData.get("phone"), email: formData.get("email")};
             const loading = new Loading(item);
 
             loading.showLoading();

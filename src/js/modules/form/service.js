@@ -4,7 +4,7 @@ const post = async (url, data) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: data.get("name"), phone: data.get("phone"), email: data.get("email")})
+        body: JSON.stringify(data)
     });
 
     if (!result.ok) {
