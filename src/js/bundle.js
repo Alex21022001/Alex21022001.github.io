@@ -178,7 +178,7 @@ class Loading {
     }
 
     showLoading() {
-        this.btn.innerHTML = "<div class='load'></div>";
+        this.btn.innerHTML = `<div class="loader"></div>`;
         this.btn.disabled = true;
     }
 
