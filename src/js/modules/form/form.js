@@ -1,6 +1,7 @@
 import Loading from "./Loading";
 import {post} from "./service";
 import FormValidation from "./validation";
+import FormResult from "./formResult";
 
 const form = () => {
     const forms = document.querySelectorAll("form");
@@ -13,11 +14,11 @@ const form = () => {
         const validation = new FormValidation(item, name, email, phone, checked);
 
         validation.validate();
-        item.addEventListener("submit", (e) => finalValidation({item, e, name, email, phone, checked}));
+        item.addEventListener("submit", (e) => onSubmit({item, e, name, email, phone, checked}));
     });
 
 
-    function finalValidation({item, e, name, email, phone, checked}) {
+    function onSubmit({item, e, name, email, phone, checked}) {
         e.preventDefault();
         const state = [name, email, phone, checked];
         let success = true;
@@ -42,11 +43,11 @@ const form = () => {
 
             post("src/sendMail.php", data)
                 .then(() => {
-                    alert("Success");
+                    FormResult.success();
                     item.reset();
                 })
                 .catch(() => {
-                    alert("Error");
+                    FormResult.fail();
                     throw new Error("We can't send your data");
                 }).finally(() => {
                 loading.hideLoading();

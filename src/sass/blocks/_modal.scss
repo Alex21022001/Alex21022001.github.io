@@ -1,0 +1,82 @@
+.modal {
+    &-result {
+        display: inline-block;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 50%;
+        transform: translate3d(50%, -100%, 0);
+        visibility: hidden;
+    }
+
+    &-result_active {
+        visibility: visible;
+        animation: show 1s forwards;
+    }
+
+    &-result_hide {
+        visibility: visible;
+        animation: hide 1s forwards;
+    }
+
+    &-close {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        cursor: pointer;
+    }
+
+    &-inner {
+        padding: 24px 28px 28px 40px;
+        width: 369px;
+        height: 130px;
+        background-color: $white-color;
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+    }
+
+    &-title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+        text-align: center;
+        color: $green-color;
+    }
+    &-title.modal-title_error{
+        color: #FC323E;
+    }
+
+    &-desc {
+        margin-top: 4px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $dark-color;
+    }
+}
+
+@keyframes show {
+    from {
+        transform: translate3d(50%, -100%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(50%, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes hide {
+    from {
+        transform: translate3d(50%, 0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(50%, -100%, 0);
+        opacity: 0;
+    }
+}
+
