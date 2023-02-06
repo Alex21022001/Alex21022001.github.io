@@ -1,3 +1,11 @@
+@media (max-width: 1300px) {
+    .point {
+        &_desc_active {
+            font-size: 11px;
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     .promo {
         background-position-x: 32%;
@@ -35,6 +43,12 @@
         }
         .contacts__agreement-label{
             gap: 15px !important;
+        }
+    }
+
+    .point {
+        &_desc_active {
+            font-size: 10px !important;
         }
     }
 
@@ -200,6 +214,43 @@
         }
 
     }
+
+
+    #german {
+        top: 34.8%;
+        right: 50.4%;
+    }
+    #german + .point_desc {
+        top: 36.8%;
+        right: 49.3%;
+    }
+
+    #poland {
+        top: 32.8%;
+        right: 47.29%;
+    }
+    #poland + .point_desc {
+        top: 33.8%;
+        right: 45.8%;
+    }
+
+    #ukraine {
+        top: 30.8%;
+        right: 43.9%;
+    }
+    #ukraine + .point_desc {
+        top: 32.1%;
+        right: 42.1%;
+    }
+
+    #usa {
+        top: 41.8%;
+        right: 86.9%;
+    }
+    #usa + .point_desc {
+        top: 43.2%;
+        right: 86.1%;
+    }
 }
 
 
@@ -293,6 +344,10 @@
             font-size: 28px;
         }
 
+    }
+
+    .point{
+        display: none;
     }
 }
 

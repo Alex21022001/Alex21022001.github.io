@@ -135,5 +135,17 @@ const allLangs = {
     "contacts .contacts__title" : {
         "ua":"Контакти"
     },
+    "contacts #german + .point_desc":{
+        "ua":"Германія"
+    },
+    "contacts #poland + .point_desc":{
+        "ua":"Польша"
+    },
+    "contacts #ukraine + .point_desc":{
+        "ua":"Україна"
+    },
+    "contacts #usa + .point_desc":{
+        "ua":"США"
+    },
 
 }

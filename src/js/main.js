@@ -7,6 +7,7 @@ import slider from "./modules/slider/slider";
 import slider_more from "./modules/slider/slider_more";
 import downloadPDF from "./modules/downloadPDF";
 import form from "./modules/form/form";
+import map from "./modules/map/map";
 
 document.body.onload = function () {
     setTimeout(() => {
@@ -25,56 +26,63 @@ window.addEventListener("DOMContentLoaded", () => {
     try {
         hamburger();
     } catch (e) {
-        console.log("Something wrong in hamburger module. " + e);
+        throw new Error("Something wrong in hamburger module. " + e);
     }
 
     try {
         adaptation();
     } catch (e) {
-        console.log("Something wrong in adaptation module. " + e);
+        throw new Error("Something wrong in adaptation module. " + e);
     }
 
     try {
         languages();
     } catch (e) {
-        console.log("Something wrong in languages module. " + e);
+        throw new Error("Something wrong in languages module. " + e);
     }
 
     try {
         moreInform();
     } catch (e) {
-        console.log("Something wrong in moreInformation module. " + e);
+        throw new Error("Something wrong in moreInformation module. " + e);
     }
 
     try {
         animation(11, "rgba(30, 30, 30, .1)", "#2CBF96", 0.935);
     } catch (e) {
-        console.log("Something wrong in animation module. " + e);
+        throw new Error("Something wrong in animation module. " + e);
     }
 
     try {
         slider();
     } catch (e) {
-        console.log("Something wrong in slider module. " + e);
+        throw new Error("Something wrong in slider module. " + e);
     }
 
     try {
         slider_more();
     } catch (e) {
-        console.log("Something wrong in slider_more module. " + e);
+        throw new Error("Something wrong in slider_more module. " + e);
     }
 
     try {
         downloadPDF();
     } catch (e) {
-        console.log("Something wrong in downloadPDF module. " + e);
+        throw new Error("Something wrong in downloadPDF module. " + e);
     }
 
     try {
         form();
     } catch (e) {
-        console.log("Something wrong in form module. " + e);
+        throw new Error("Something wrong in form module. " + e);
     }
+
+    try {
+        map();
+    } catch (e) {
+        throw new Error("Something wrong in form module. " + e);
+    }
+
 
 
 });

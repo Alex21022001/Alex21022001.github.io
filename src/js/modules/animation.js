@@ -72,8 +72,6 @@ const animation = (font, background, color, speed) => {
     let id = setInterval(draw, 50);
 
     if (window.screen.availWidth < 768) {
-
-    } else {
         window.addEventListener("resize", () => location.reload());
     }
 

@@ -118,8 +118,6 @@ const animation = (font, background, color, speed) => {
     let id = setInterval(draw, 50);
 
     if (window.screen.availWidth < 768) {
-
-    } else {
         window.addEventListener("resize", () => location.reload());
     }
 
@@ -707,6 +705,49 @@ function adaptMainTitle(){
 
 /***/ }),
 
+/***/ "./src/js/modules/map/map.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/map/map.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function map() {
+    const arr = [...document.querySelectorAll(".point")];
+
+    bindEvent(arr,showText);
+
+
+    function showText(e) {
+        const target = e.currentTarget;
+        const desc = document.querySelector(`#${target.getAttribute("id")} + .point_desc`);
+
+        target.classList.add("point_active");
+        desc.classList.add("point_desc_active");
+
+        setTimeout(close, 3500);
+
+        function close() {
+            target.classList.remove("point_active");
+            desc.classList.remove("point_desc_active");
+        }
+    }
+
+    function bindEvent(arr, callback) {
+        arr.forEach(item => {
+            item.addEventListener("click", callback);
+        })
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (map);
+
+/***/ }),
+
 /***/ "./src/js/modules/moreInform.js":
 /*!**************************************!*\
   !*** ./src/js/modules/moreInform.js ***!
@@ -1093,6 +1134,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_slider_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider/slider_more */ "./src/js/modules/slider/slider_more.js");
 /* harmony import */ var _modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/downloadPDF */ "./src/js/modules/downloadPDF.js");
 /* harmony import */ var _modules_form_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/form/form */ "./src/js/modules/form/form.js");
+/* harmony import */ var _modules_map_map__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/map/map */ "./src/js/modules/map/map.js");
+
 
 
 
@@ -1120,56 +1163,63 @@ window.addEventListener("DOMContentLoaded", () => {
     try {
         ;(0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
     } catch (e) {
-        console.log("Something wrong in hamburger module. " + e);
+        throw new Error("Something wrong in hamburger module. " + e);
     }
 
     try {
         (0,_modules_adaptation__WEBPACK_IMPORTED_MODULE_1__["default"])();
     } catch (e) {
-        console.log("Something wrong in adaptation module. " + e);
+        throw new Error("Something wrong in adaptation module. " + e);
     }
 
     try {
         (0,_modules_languages__WEBPACK_IMPORTED_MODULE_2__["default"])();
     } catch (e) {
-        console.log("Something wrong in languages module. " + e);
+        throw new Error("Something wrong in languages module. " + e);
     }
 
     try {
         (0,_modules_moreInform__WEBPACK_IMPORTED_MODULE_4__["default"])();
     } catch (e) {
-        console.log("Something wrong in moreInformation module. " + e);
+        throw new Error("Something wrong in moreInformation module. " + e);
     }
 
     try {
         (0,_modules_animation__WEBPACK_IMPORTED_MODULE_3__["default"])(11, "rgba(30, 30, 30, .1)", "#2CBF96", 0.935);
     } catch (e) {
-        console.log("Something wrong in animation module. " + e);
+        throw new Error("Something wrong in animation module. " + e);
     }
 
     try {
         (0,_modules_slider_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
     } catch (e) {
-        console.log("Something wrong in slider module. " + e);
+        throw new Error("Something wrong in slider module. " + e);
     }
 
     try {
         (0,_modules_slider_slider_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
     } catch (e) {
-        console.log("Something wrong in slider_more module. " + e);
+        throw new Error("Something wrong in slider_more module. " + e);
     }
 
     try {
         (0,_modules_downloadPDF__WEBPACK_IMPORTED_MODULE_7__["default"])();
     } catch (e) {
-        console.log("Something wrong in downloadPDF module. " + e);
+        throw new Error("Something wrong in downloadPDF module. " + e);
     }
 
     try {
         (0,_modules_form_form__WEBPACK_IMPORTED_MODULE_8__["default"])();
     } catch (e) {
-        console.log("Something wrong in form module. " + e);
+        throw new Error("Something wrong in form module. " + e);
     }
+
+    try {
+        (0,_modules_map_map__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    } catch (e) {
+        throw new Error("Something wrong in form module. " + e);
+    }
+
 
 
 });
