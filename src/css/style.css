@@ -256,6 +256,7 @@
   font-size: 36px;
   line-height: 32px;
   color: #EEF3F3;
+  margin: 0;
 }
 .aboutUs__description {
   transition: 2s all;
@@ -836,11 +837,11 @@ label > input:has(~ span.input-error_active) {
 }
 .modal-result_active {
   visibility: visible;
-  animation: show 1s forwards;
+  animation: show_modal 1s forwards;
 }
 .modal-result_hide {
   visibility: visible;
-  animation: hide 1s forwards;
+  animation: hide_modal 1s forwards;
 }
 .modal-close {
   position: absolute;
@@ -877,7 +878,7 @@ label > input:has(~ span.input-error_active) {
   color: #1E1E1E;
 }
 
-@keyframes show {
+@keyframes show_modal {
   from {
     transform: translate3d(50%, -100%, 0);
     opacity: 0;
@@ -887,7 +888,7 @@ label > input:has(~ span.input-error_active) {
     opacity: 1;
   }
 }
-@keyframes hide {
+@keyframes hide_modal {
   from {
     transform: translate3d(50%, 0, 0);
     opacity: 1;

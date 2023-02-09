@@ -11,12 +11,12 @@
 
     &-result_active {
         visibility: visible;
-        animation: show 1s forwards;
+        animation: show_modal 1s forwards;
     }
 
     &-result_hide {
         visibility: visible;
-        animation: hide 1s forwards;
+        animation: hide_modal 1s forwards;
     }
 
     &-close {
@@ -59,7 +59,7 @@
     }
 }
 
-@keyframes show {
+@keyframes show_modal {
     from {
         transform: translate3d(50%, -100%, 0);
         opacity: 0;
@@ -69,7 +69,7 @@
         opacity: 1;
     }
 }
-@keyframes hide {
+@keyframes hide_modal {
     from {
         transform: translate3d(50%, 0, 0);
         opacity: 1;

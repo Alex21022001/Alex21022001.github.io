@@ -65,7 +65,7 @@ class FormResult {
             </div>
             <div class="modal-text">
                 <div class="modal-title modal-title_error">Помилка!</div>
-                <div class="modal-desc">Виникла помилка. <br>С пробуйте ще раз</div>
+                <div class="modal-desc">Виникла помилка. <br>С пробуйте ще раз!</div>
             </div>
         </div>
     </div>`;
