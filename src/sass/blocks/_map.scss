@@ -1,8 +1,11 @@
 .point {
     cursor: pointer;
     position: absolute;
-    transition: .9s all;
+    transition: .5s all;
     transform: translateY(0);
+    &:hover{
+        transform: scale(1.2);
+    }
 
     &_active {
         transform: translateY(-15px);
@@ -12,8 +15,8 @@
         text-align: center;
         position: absolute;
         visibility: hidden;
-        font-size: 8px;
-        transition: .8s all;
+        font-size: 13px;
+        transition: .5s all;
         opacity: 0;
     }
 

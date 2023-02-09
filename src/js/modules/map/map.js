@@ -11,7 +11,7 @@ function map() {
         target.classList.add("point_active");
         desc.classList.add("point_desc_active");
 
-        setTimeout(close, 3500);
+        setTimeout(close, 2500);
 
         function close() {
             target.classList.remove("point_active");

@@ -900,8 +900,11 @@ label > input:has(~ div.input-error_active) {
 .point {
   cursor: pointer;
   position: absolute;
-  transition: 0.9s all;
+  transition: 0.5s all;
   transform: translateY(0);
+}
+.point:hover {
+  transform: scale(1.2);
 }
 .point_active {
   transform: translateY(-15px);
@@ -910,8 +913,8 @@ label > input:has(~ div.input-error_active) {
   text-align: center;
   position: absolute;
   visibility: hidden;
-  font-size: 8px;
-  transition: 0.8s all;
+  font-size: 13px;
+  transition: 0.5s all;
   opacity: 0;
 }
 .point_desc_active {
