@@ -71,9 +71,9 @@ const animation = (font, background, color, speed) => {
 
     let id = setInterval(draw, 50);
 
-    if (window.screen.availWidth < 768) {
-        window.addEventListener("resize", () => location.reload());
-    }
+    // if (window.screen.availWidth < 768) {
+    //     window.addEventListener("resize", () => location.reload());
+    // }
 
     stopAnimationByScroll(id);
 }

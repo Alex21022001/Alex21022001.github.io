@@ -117,9 +117,9 @@ const animation = (font, background, color, speed) => {
 
     let id = setInterval(draw, 50);
 
-    if (window.screen.availWidth < 768) {
-        window.addEventListener("resize", () => location.reload());
-    }
+    // if (window.screen.availWidth < 768) {
+    //     window.addEventListener("resize", () => location.reload());
+    // }
 
     stopAnimationByScroll(id);
 }
@@ -346,7 +346,7 @@ class FormResult {
             </div>
             <div class="modal-text">
                 <div class="modal-title modal-title_error">Помилка!</div>
-                <div class="modal-desc">Виникла помилка. <br>С пробуйте ще раз</div>
+                <div class="modal-desc">Виникла помилка. <br>С пробуйте ще раз!</div>
             </div>
         </div>
     </div>`;
