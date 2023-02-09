@@ -72,7 +72,7 @@
             display: flex;
             flex-direction: column;
 
-            span {
+            span:not(.input-error){
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 150%;
@@ -102,7 +102,7 @@
                 display: none;
             }
 
-            span {
+            span:not(.input-error,.accept_agreement) {
                 width: 20px;
                 height: 20px;
                 border: 1px solid #EEF3F3;
@@ -136,7 +136,7 @@
                 bottom: -43px;
             }
 
-            .input-error_active ~ div > .contacts__agreement_link {
+            .input-error_active ~ span > .contacts__agreement_link {
                 color: #FC323E;
             }
         }
@@ -144,6 +144,6 @@
 
 }
 
-label > input:has(~ div.input-error_active) {
+label > input:has(~ span.input-error_active) {
     border-bottom: 1px solid #FC323E !important;
 }

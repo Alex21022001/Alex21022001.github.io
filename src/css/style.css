@@ -733,7 +733,7 @@
   display: flex;
   flex-direction: column;
 }
-.contacts form label:not(.contacts__agreement-label) span {
+.contacts form label:not(.contacts__agreement-label) span:not(.input-error) {
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -758,7 +758,7 @@
 .contacts form .contacts__agreement-label input {
   display: none;
 }
-.contacts form .contacts__agreement-label span {
+.contacts form .contacts__agreement-label span:not(.input-error, .accept_agreement) {
   width: 20px;
   height: 20px;
   border: 1px solid #EEF3F3;
@@ -788,11 +788,11 @@
   color: #FC323E;
   bottom: -43px;
 }
-.contacts form .contacts__agreement-label .input-error_active ~ div > .contacts__agreement_link {
+.contacts form .contacts__agreement-label .input-error_active ~ span > .contacts__agreement_link {
   color: #FC323E;
 }
 
-label > input:has(~ div.input-error_active) {
+label > input:has(~ span.input-error_active) {
   border-bottom: 1px solid #FC323E !important;
 }
 
