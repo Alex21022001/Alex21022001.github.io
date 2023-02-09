@@ -3,9 +3,7 @@
     position: absolute;
     transition: .5s all;
     transform: translateY(0);
-    &:hover{
-        transform: scale(1.2);
-    }
+
 
     &_active {
         transform: translateY(-15px);

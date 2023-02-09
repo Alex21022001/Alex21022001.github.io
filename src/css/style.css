@@ -904,9 +904,6 @@ label > input:has(~ span.input-error_active) {
   transition: 0.5s all;
   transform: translateY(0);
 }
-.point:hover {
-  transform: scale(1.2);
-}
 .point_active {
   transform: translateY(-15px);
 }
