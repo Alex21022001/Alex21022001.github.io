@@ -1202,7 +1202,7 @@ label > input:has(~ span.input-error_active) {
     font-size: 28px;
   }
   .projects .slider__indicators {
-    transform: translateX(4%);
+    transform: translateX(2%);
   }
   .projects .slider__prev {
     width: 20px;
