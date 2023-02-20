@@ -492,6 +492,11 @@
   right: 50px;
 }
 
+[data-pdf-btn=false] {
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
 .rest {
   background: url("../img/ProjectsBG.png") center center/cover no-repeat;
   min-height: 3750px;

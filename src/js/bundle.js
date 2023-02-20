@@ -647,6 +647,7 @@ const languages = () => {
 
             translateForms();
             adaptMainTitle();
+            translateMainBtn();
         }
     }
 
@@ -701,6 +702,12 @@ function adaptMainTitle(){
     }
 }
 
+function translateMainBtn(){
+     const btns = document.querySelectorAll(`[data-form-btn='true']`);
+     btns.forEach(item=>{
+         item.textContent = "Зв'язатися";
+     })
+}
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (languages);
 
 /***/ }),

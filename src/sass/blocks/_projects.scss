@@ -178,3 +178,9 @@
         right: 50px;
     }
 }
+
+[data-pdf-btn='false']{
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+

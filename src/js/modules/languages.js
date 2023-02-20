@@ -31,6 +31,7 @@ const languages = () => {
 
             translateForms();
             adaptMainTitle();
+            translateMainBtn();
         }
     }
 
@@ -85,4 +86,10 @@ function adaptMainTitle(){
     }
 }
 
+function translateMainBtn(){
+     const btns = document.querySelectorAll(`[data-form-btn='true']`);
+     btns.forEach(item=>{
+         item.textContent = "Зв'язатися";
+     })
+}
 export default languages;
