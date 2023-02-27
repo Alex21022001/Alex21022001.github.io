@@ -41,7 +41,8 @@
         .row {
             align-items: flex-start;
         }
-        .contacts__agreement-label{
+
+        .contacts__agreement-label {
             gap: 15px !important;
         }
     }
@@ -209,7 +210,8 @@
         .contacts__agreement-label > .input-error {
             bottom: -25px !important;
         }
-        .contacts__agreement-label{
+
+        .contacts__agreement-label {
             gap: 10px !important;
         }
 
@@ -346,8 +348,19 @@
 
     }
 
-    .point{
+    .point {
         display: none;
+    }
+
+    footer {
+        .footer__authors {
+            margin-top: 0;
+            align-items: start;
+        }
+    }
+
+    .rest{
+        padding-bottom: 0;
     }
 }
 
@@ -505,14 +518,19 @@
         &-inner {
             width: 350px;
         }
+
         &-title {
             font-size: 18px;
         }
-        &-desc{
+
+        &-desc {
             font-size: 14px;
+        }
     }
 
-}
+    footer{
+        padding-top: 70px;
+    }
 
 }
 

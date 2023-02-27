@@ -1,0 +1,117 @@
+footer {
+    padding-top: 124px;
+    padding-bottom: 124px;
+    min-height: 480px;
+    background: $dark-color;
+}
+
+.footer {
+    &__img {
+        text-align: center;
+    }
+
+    &__wrapper {
+
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 120%;
+        color: $white-color;
+        margin-bottom: 0;
+    }
+
+    &__email {
+        margin-top: 32px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        &-link {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: $white-color;
+            text-decoration: none;
+
+            &:hover {
+                color: $green-color;
+            }
+        }
+    }
+
+    &__media {
+        margin-top: 16px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        &-text {
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            color: #D0DAF5;
+            opacity: .5;
+        }
+
+        &-icons {
+            display: flex;
+            gap: 19px;
+        }
+    }
+
+    &__divider {
+        border: 1px solid #EEF3F3;
+        margin-top: 32px;
+    }
+
+    &__menu {
+        margin-top: 32px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            a {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: $white-color;
+                text-decoration: none;
+
+                &:hover {
+                    color: $green-color;
+                }
+            }
+        }
+    }
+
+    &__authors {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+
+        div:not(a){
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #D0DAF5;
+            opacity: .5;
+        }
+        a {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #D0DAF5;
+
+            &:hover {
+                color: $green-color;
+                opacity: 1;
+            }
+        }
+    }
+
+}

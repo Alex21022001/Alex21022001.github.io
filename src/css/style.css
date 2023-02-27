@@ -499,7 +499,7 @@
 
 .rest {
   background: url("../img/ProjectsBG.png") center center/cover no-repeat;
-  min-height: 3750px;
+  padding-bottom: 124px;
 }
 
 .team {
@@ -975,6 +975,101 @@ label > input:has(~ span.input-error_active) {
     transform: translateY(-10px);
   }
 }
+footer {
+  padding-top: 124px;
+  padding-bottom: 124px;
+  min-height: 480px;
+  background: #1E1E1E;
+}
+
+.footer__img {
+  text-align: center;
+}
+.footer__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  color: #EEF3F3;
+  margin-bottom: 0;
+}
+.footer__email {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.footer__email-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #EEF3F3;
+  text-decoration: none;
+}
+.footer__email-link:hover {
+  color: #2CBF96;
+}
+.footer__media {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.footer__media-text {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: #D0DAF5;
+  opacity: 0.5;
+}
+.footer__media-icons {
+  display: flex;
+  gap: 19px;
+}
+.footer__divider {
+  border: 1px solid #EEF3F3;
+  margin-top: 32px;
+}
+.footer__menu {
+  margin-top: 32px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__menu-item a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #EEF3F3;
+  text-decoration: none;
+}
+.footer__menu-item a:hover {
+  color: #2CBF96;
+}
+.footer__authors {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.footer__authors div:not(a) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #D0DAF5;
+  opacity: 0.5;
+}
+.footer__authors a {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #D0DAF5;
+}
+.footer__authors a:hover {
+  color: #2CBF96;
+  opacity: 1;
+}
+
 @media (max-width: 1300px) {
   .point_desc_active {
     font-size: 11px;
@@ -1234,6 +1329,13 @@ label > input:has(~ span.input-error_active) {
   .point {
     display: none;
   }
+  footer .footer__authors {
+    margin-top: 0;
+    align-items: start;
+  }
+  .rest {
+    padding-bottom: 0;
+  }
 }
 @media (max-width: 630px) {
   .projects .slider__prev {
@@ -1353,6 +1455,9 @@ label > input:has(~ span.input-error_active) {
   }
   .modal-desc {
     font-size: 14px;
+  }
+  footer {
+    padding-top: 70px;
   }
 }
 @media (max-width: 535px) {
