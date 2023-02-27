@@ -357,12 +357,12 @@
             margin-top: 0;
             align-items: start;
         }
+
+        padding-top: 0;
     }
 
-    .rest{
-        padding-bottom: 0;
-    }
 }
+
 
 
 @media (max-width: 630px) {
@@ -529,7 +529,8 @@
     }
 
     footer{
-        padding-top: 70px;
+        padding-top: 0;
+        padding-bottom: 70px;
     }
 
 }

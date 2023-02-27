@@ -978,7 +978,6 @@ label > input:has(~ span.input-error_active) {
 footer {
   padding-top: 124px;
   padding-bottom: 124px;
-  min-height: 480px;
   background: #1E1E1E;
 }
 
@@ -1329,12 +1328,12 @@ footer {
   .point {
     display: none;
   }
+  footer {
+    padding-top: 0;
+  }
   footer .footer__authors {
     margin-top: 0;
     align-items: start;
-  }
-  .rest {
-    padding-bottom: 0;
   }
 }
 @media (max-width: 630px) {
@@ -1457,7 +1456,8 @@ footer {
     font-size: 14px;
   }
   footer {
-    padding-top: 70px;
+    padding-top: 0;
+    padding-bottom: 70px;
   }
 }
 @media (max-width: 535px) {
