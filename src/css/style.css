@@ -1107,6 +1107,11 @@ footer {
     font-size: 10px !important;
   }
 }
+@media (min-width: 992px) {
+  .slider__indicators {
+    gap: 15px;
+  }
+}
 @media (max-width: 991px) {
   .aboutUs {
     min-height: 655px;
