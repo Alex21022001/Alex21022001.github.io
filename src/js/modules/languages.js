@@ -73,7 +73,7 @@ function translateForms() {
         form.querySelector(".email").textContent = "Ваш Email";
         form.querySelector(".phone").textContent = "Ваш номер телефону";
 
-        form.querySelector(".accept_agreement").innerHTML = "Я приймаю  <a class=\"contacts__agreement_link\" href=\"#\">політику конфіденційності</a>"
+        form.querySelector(".accept_agreement").innerHTML = "Я приймаю  <a class=\"contacts__agreement_link\" target=\"_blank\" href=\"src/terms.html\">політику конфіденційності</a>"
         form.querySelector(".contacts__agreement-label > .input-error").textContent = "Для відправки Ви повинні погодитися з політикою конфіденційності нашого сайту."
     });
 }
