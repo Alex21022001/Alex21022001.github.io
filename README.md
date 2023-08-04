@@ -35,7 +35,7 @@ our services and offerings.
 
 To get a local copy of this project up and running, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/uttt-website.git`
+1. Clone the repository: `git clone https://github.com/Alex21022001/UTTT.git`
 2. Open `index.html` in your preferred web browser.
 
 ## License
