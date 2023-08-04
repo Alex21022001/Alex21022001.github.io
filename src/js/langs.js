@@ -128,7 +128,7 @@ const allLangs = {
     },
     //SLIDE 5
     "slider__item_slide-5 .slider__item-title": {
-        "ua": "DRS (Disc Retard System)"
+        "ua": "Disc Brake"
     },
     "slider__item_slide-5 .slider__item-subtitle": {
         "ua": "Дискове гальмо для наземного транспорту."
@@ -252,11 +252,7 @@ const allLangs = {
     "footer .footer__authors > .developer": {
         "ua": "Розробник: <a target=\"_blank\" href=\"https://www.linkedin.com/in/alexey-sitiy-a5303623a/\">Ситий Олексій</a>"
     },
-    // "footer .footer__authors > .designer > a":{
-    //     "ua":"Сидоренко Аліса"
-    // },
-    // "footer .footer__authors > .developer > a":{
-    //     "ua":"Ситий Олексій"
-    // },
-
+    "footer .footer__code": {
+        "ua": "Код ЄДРПОУ 45124018 <br> Україна, Харківська обл., м. Харків"
+    }
 }
